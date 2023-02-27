@@ -1,0 +1,189 @@
+/* ------
+general inputs
+-------*/
+
+input{
+    border-radius: 0!important;
+    text-align: center;
+    transition: background-color $transition-time;
+}
+
+input:focus{
+    transition: background-color $transition-time;
+}
+
+/* ------
+tooltips
+-------*/
+
+  .custom-tooltip.tooltip > .tooltip-inner{
+    background: $accent;
+    color: $black-1;
+    border-radius: 0;
+    box-shadow: 0px 2px 4px rgba(22, 22, 22, 0.6);
+
+  }
+
+  .custom-tooltip.tooltip > .tooltip-arrow::before{
+    color: $black-1;
+    border-top-color: $accent;
+  }
+
+  /*
+  colour picker
+  */
+
+  #mypick{
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 42px!important;
+    background-color: transparent;
+    border:none;
+    cursor: pointer;
+    padding:0;
+    border-radius: $border-radius!important;
+    }
+    
+    #mypick::-moz-color-swatch{
+      border:none;
+      border: 0;
+      border-radius: $border-radius!important;
+    }
+    
+    #mypick::-webkit-color-swatch{
+      border:none;
+      border: 0;
+      border-radius: $border-radius!important;
+    }
+
+    #mypick::-webkit-color-swatch::before   {
+        position: absolute;
+        left:0;
+        top: 0;
+        // z-index: 1000!important;
+    }
+
+    #mypick::-moz-color-swatch::before{
+      position: absolute;
+      left:0;
+      top: 0;
+      // z-index: 1000!important;
+    }
+
+    
+    #mypick::-webkit-color-swatch-wrapper {
+        padding: 0;
+    }
+
+  //   #mypick::after{
+  //     position: absolute;
+  //     content: "\e90a";
+  //     font-family: 'icomoon';
+  //     width: 42px;
+  //     height: 42px;
+  //     border-radius: 50%;
+  //     text-align: center;
+  //     margin:  auto 0;
+  //     top: 0; 
+  //     bottom: 0; 
+  //     right: -3px;        
+  //     box-shadow: unset;
+  //     padding-top: 7px;
+  //     // transition: all 1s;
+
+  // }
+
+    #mypick::before{
+        position: absolute!important;
+        content: "\e90a"!important;
+        font-family: 'icomoon'!important;
+        width: 42px!important;
+        height: 42px;
+        border-radius: 50%!important;
+        text-align: center!important;
+        margin:  auto 0!important;
+        top: 0!important;
+        bottom: 0!important;
+        right: -3px!important;    
+        box-shadow: unset!important;
+        padding-top: 7px!important;
+        // transition: all 1s;
+
+    }
+
+  /*
+add button
+  */
+
+  .my_submit{
+    border-radius: $border-radius!important;
+    text-transform: uppercase;
+}
+    
+
+      
+
+
+
+/*
+input number
+*/
+
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+    }
+
+/*
+invalid fields
+*/
+    .invalid + *:before{
+        // color:	$invalid;
+        position: absolute;
+        content: "\e903";
+        font-family: 'icomoon';
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        text-align: center;
+        margin:  auto 0;
+        top: 3px; 
+         bottom: 0; 
+         right: 17px;
+
+        z-index: 1000!important;
+        transform: rotate(270deg);
+        transition: all $transition-time;
+      
+        padding-top: 3px;
+      } 
+
+    .valid + *:before{
+        // color:		$valid;
+        position: absolute;
+        content: "\e904";
+        font-family: 'icomoon';
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        text-align: center;
+        margin:  auto 0;
+        top: 3px; 
+         bottom: 0; 
+         right: 17px;
+         transform: rotate(0deg);
+        z-index: 1000!important;
+        transition: all $transition-time;
+        padding-top: 3px;
+    }
+/*
+submit
+*/
+#submit{
+    transition: all 1s ;
+    height: 42px;
+    transition: all 1s ;
+} 

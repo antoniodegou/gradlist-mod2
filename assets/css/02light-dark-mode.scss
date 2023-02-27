@@ -1,0 +1,152 @@
+/* ------
+DEFINE COLOURS FOR COLOUR MODES
+-------*/
+
+@mixin dark-mode {
+    background-color: $black-1;
+    color: $white-2;
+    border-color: $white-1!important;
+    transition: all $transition-time;
+ 
+
+    input{
+        border: solid $border-width $white-1 !important;
+        background-color:$black-2 ;
+        color: $white-1;
+        
+    }
+
+    input:focus{
+        background-color: $black-3;
+        color: $white-1;
+        border-color: $accent!important;
+        box-shadow: 0 0 1rem .25rem rgb(13 110 253 / 25%);
+        box-shadow: unset;
+        transition: all $transition-time;
+    }
+
+    .bottom-border{
+        border-bottom: solid $border-width $white-1!important;
+    }
+
+    .my_switch_label{
+        background: $black-1;
+        border: 3px solid $white-2;
+      }
+
+      #gradpreview{
+        border: solid $border-width $white-1!important;
+      }
+    
+      .my_switch_label:after{
+        background: $white-4;
+      }
+    
+      #my_switch:checked + .my_switch_label {
+        background: $white-1;
+      }
+
+
+    #mypick::before{
+      background-color: $black-1;
+      color: $white-1;
+      border: solid $border-width $white-1;
+      transition: all $transition-time;
+    }
+    #submit:disabled{
+      color:$black-4;
+      background-color: $black-1;
+      border-color: $black-4!important;
+     
+  }
+    .valid + *:before{
+      color:		$valid;
+    }
+    .invalid + *:before{
+      color:	$invalid;
+    }
+  
+    
+  }
+  
+  @mixin light-mode {
+    background-color: $white-1;
+    color: $black-2;
+    $invalid:red;
+    $valid: green;
+    // $accent:
+    transition: all $transition-time!important;
+ 
+    input{
+        border: solid $border-width $black-1!important;
+        background-color:$white-2 ;
+        transition: all $transition-time;
+    }
+
+    input:focus{
+      border-color: $black-1!important;
+      background-color: $white-3;
+      box-shadow: unset;
+      box-shadow: 0 0 .1rem .25rem rgb(255 215 0 / 25%);
+      transition: all $transition-time;
+    }
+    .bottom-border{
+        border-bottom: solid $border-width $black-1!important;
+    }
+
+    .my_switch_label,#gradpreview{
+        border: solid $border-width $black-1!important;
+        transition: all $transition-time!important;
+    }
+
+    .my_switch_label:after{
+        background: $black-1;
+        transition: all $transition-time!important;
+    }
+    
+    #my_switch:checked + .my_switch_label {
+        background: $white-4;
+    }
+
+    #mypick::before{
+      background-color: $black-1;
+      color: $black-1;
+      background-color: $white-4;
+      border: solid $border-width $black-1;
+      transition: all $transition-time!important;
+    }
+    #submit{
+      color:$black-1;
+      background-color: $white-2;
+    }
+    #submit:disabled{
+      color:$white-4;
+      background-color: $white-1;
+      border-color: $white-2!important;
+      
+    }
+    .valid + *:before{
+      color: $valid;
+    }
+    .invalid + *:before{
+      color: $invalid;
+    }
+
+  }
+
+
+
+.dark-mode {
+    @include dark-mode;
+}
+  
+.light-mode {
+    @include light-mode;
+}
+  
+@media (prefers-color-scheme: dark) {
+    body {
+      @include dark-mode;
+    }
+  }
+  
