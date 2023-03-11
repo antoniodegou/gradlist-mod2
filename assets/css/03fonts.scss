@@ -28,6 +28,9 @@
   .icon-drag_indicator:before {
     content: "\e902";
   }
+  .icon-arrow_right:before {
+    content: "\e907";
+  }
   .icon-times:before {
     content: "\e903";
   }
@@ -49,8 +52,7 @@
   .icon-eyedropper:before {
     content: "\e90a";
   }
-
-
+  
 
 
 
@@ -88,7 +90,18 @@
     text-transform: uppercase;
   }
 
+
   p,.custom-tooltip.tooltip{
     font-family: 'Sentient-Variable';
     font-weight: 400;
   }
+
+  .custom-tooltip.tooltip{
+    font-weight: 700;
+  }
+
+  // section{
+  //   background: conic-gradient(at 50% 50%,transparent 135deg,green 0,green 225deg, transparent 0);
+
+  // }
+

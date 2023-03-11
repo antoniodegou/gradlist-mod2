@@ -8,7 +8,9 @@ DEFINE COLOURS FOR COLOUR MODES
     border-color: $white-1!important;
     transition: all $transition-time;
  
-
+    .collapse-title{
+      color:$white-1;
+    }
     input{
         border: solid $border-width $white-1 !important;
         background-color:$black-2 ;
@@ -31,7 +33,7 @@ DEFINE COLOURS FOR COLOUR MODES
 
     .my_switch_label{
         background: $black-1;
-        border: 3px solid $white-2;
+        border: $border-width  solid $white-2;
       }
 
       #gradpreview{
@@ -76,7 +78,9 @@ DEFINE COLOURS FOR COLOUR MODES
     $valid: green;
     // $accent:
     transition: all $transition-time!important;
- 
+    .collapse-title{
+      color:$black-1;
+    }
     input{
         border: solid $border-width $black-1!important;
         background-color:$white-2 ;

@@ -21,7 +21,7 @@ CHECKBOX color mode
   .my_switch_label:after {
     content: '';
     position: absolute;
-    top: 1.9px;
+    top: 1px;
     left: 5px;
     width: 28px;
     height: 28px;
@@ -48,12 +48,12 @@ CHECKBOX color mode
     font-size: 30px;
     position: absolute;
    left: 4px;
-   top:2px;
+   top:0;
 
   }
   .icon-sun{
     position: absolute;
-    right: 5.5px;
-    font-size: 27px;
-    top:2.5px;
+    right: 6px;
+    font-size: 26px;
+    top:2px;
   }

@@ -1,78 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body class="dark-mode">
-    <div class="container-fluid">
-      <header class="row p-5 bottom-border">
-        <div class="col m-0 p-0">
-          <h1 class="col m-0">gradList</h1>
-          <p class="col">create lists of gradient colours</p>
-        </div>
-        <div class="d-flex col  justify-content-between p-0 ">
-          <input  type="checkbox"  id="my_switch">
-          <label class="my_switch_label fs1" for="my_switch">
-             <div> 
-                <span class="icon-moon"></span> 
-                <span class="icon-sun"></span>
-             </div>
-          </label>
-        </div>
-      </header>
-      <section class="row p-5 bottom-border">
-        <h2 class="m-0 p-0 pb-4">Converter</h2>
-        <form action="" id="myForm" class="pb-2 row p-0 m-0">
-          <div class="input-group p-0 pb-4 col-12 "> 
-             <label for="hex_code" class="form-label col-12" >HEX</label>
-             <input type="text" id="hex_code" class="form-control converter" name="hex_code" pattern="[0-9a-fA-F]{3}([0-9a-fA-F]{3})?" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" data-icon="&#xe904;" data-icon="&#xe903;"  title="Hex code with #" placeholder="Use #" required> <span></span>
-          </div>
-          <div class="input-group p-0 pb-4 col-12 "> 
-             <label for="rgb" class="form-label col-12 ">RGB</label>    
-             <input type="text" id="rgb" class="form-control converter" name="rgb"  pattern="^(?:(?:^|,\s*)([01]?\d\d?|2[0-4]\d|25[0-5])){3}$"  data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" data-icon="&#xe904;" data-icon="&#xe903;"   title="RGB values"  placeholder="[0-255], [0-255], [0-255]" required> <span></span> 
-          </div>
-          <div class="input-group p-0 pb-4 col-12 "> 
-             <label for="hsl" class="form-label col-12">HSL</label>              
-             <input type="text" class="form-control converter" name="hsl"  id="hsl"  placeholder="[0-360], [0-100], [0-100]" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top"  data-icon="&#xe904;" data-icon="&#xe903;"  title="HSl values" required> <span></span> 
-          </div>
-          <div class="input-group p-0 pb-4 col-12 "> 
-           <label for="exampleDataList" class="form-label col-12">CSS  keywords (approximated value)</label>
-           <input id="CSScolours" class="form-control converter" list="datalistOptions" id="exampleDataList" placeholder="CSS colours" data-bs-toggle="tooltip" data-bs-html="true" data-bs-custom-class="custom-tooltip" data-bs-placement="top"  title="CSS colour names"><span class="d-flex"></span>
-           <datalist id="datalistOptions">
-           </datalist> 
-          </div>
-          <div class="input-group p-0  col-12">
-            <div class="">
-              <div class="col pb-3 mt-3">
-                <!-- <label id="mypicklable" for="mypick" class="form-label "></label> -->
-                <input id="mypick" class="form-control converter" type="color"  name="head" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top"  data-icon="&#xe90a;" title="Colour Picker" >
-              </div>
-              <div class="col  pt-3">
-                <input type="submit" id="submit" class="my_submit p-1 ps-4 pe-4 w-100" value="Add Colour" disabled>
-              </div>
+   <head>
+      <meta charset="UTF-8" >
+      <link rel="icon" type="image/svg+xml" href="/vite.svg" >
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+      <title>Vite App</title>
+   </head>
+   <body class="dark-mode p-0 m-0">
+      <div class="container-fluid  ">
+         <!-- header -->
+         <header class="row    bottom-border  p-4">
+            <div class="col m-0 p-0">
+               <h1 class="col m-0">gradList</h1>
+               <p class="col m-0">create lists of gradient colours</p>
             </div>
-
-         </div>
-     </form>
-
-      </section>
-      <section class="row">
-        <h2>Spot colours</h2>
-        <div class="col">spot cols</div>
-        <div class="col">grad prev</div>
-      </section>
-      <section class="row">
-        <h2>Options</h2>
-      </section>
-
-      <footer>
-
-      </footer>
-    </div>
-     
-    <script type="module" src="/main.js"></script>
-  </body>
+            <div class="d-flex col  justify-content-between p-0 ">
+               <input  type="checkbox"  id="my_switch">
+               <label class="my_switch_label fs1" for="my_switch">
+                  <!-- <div>  -->
+                  <span class="icon-moon"></span> 
+                  <span class="icon-sun"></span>
+                  <!-- </div> -->
+               </label>
+            </div>
+         </header>
+         <!-- converter -->
+         <section class="row   bottom-border ">
+            <div class="  p-0 m-0   p-4 bottom-border">
+               <h2 class="m-0 p-0  ">Converter</h2>
+            </div>
+            <form  id="myForm" class="    p-0 m-0  p-4 position-relative">
+               <div class="shade p-0">
+                  <svg version="1.1" class="triangle" viewBox="0 0 100 195" preserveAspectRatio="none"  >
+                     <polygon points="288,560 0,560 0,0 "/>
+                  </svg>
+               </div>
+               <div class="input-group p-0 pb-4 col-12 "> 
+                  <label for="hex_code" class="form-label col-12" >HEX</label>
+                  <input type="text" id="hex_code" class="form-control converter" name="hex_code" pattern="[0-9a-fA-F]{3}([0-9a-fA-F]{3})?" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" data-icon="&#xe904;&#xe903;"    title="Hex code with #" placeholder="Use #" required> <span></span>
+               </div>
+               <div class="input-group p-0 pb-4 col-12 "> 
+                  <label for="rgb" class="form-label col-12 ">RGB</label>    
+                  <input type="text" id="rgb" class="form-control converter" name="rgb"  pattern="^(?:(?:^|,\s*)([01]?\d\d?|2[0-4]\d|25[0-5])){3}$"  data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" data-icon="&#xe904;&#xe903;"     title="RGB values"  placeholder="[0-255], [0-255], [0-255]" required> <span></span> 
+               </div>
+               <div class="input-group p-0 pb-4 col-12 "> 
+                  <label for="hsl" class="form-label col-12">HSL</label>              
+                  <input type="text" class="form-control converter" name="hsl"  id="hsl"  placeholder="[0-360], [0-100], [0-100]" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top"  data-icon="&#xe904;&#xe903;"    title="HSl values" required> <span></span> 
+               </div>
+               <div class="input-group p-0 pb-4 col-12 ">
+                  <label for="CSScolours" class="form-label col-12">CSS  keywords (approximated value)</label>
+                  <input id="CSScolours" class="form-control converter  " list="datalistOptions"  placeholder="CSS colours" data-bs-toggle="tooltip" data-bs-html="true" data-bs-custom-class="custom-tooltip" data-bs-placement="top"  title="CSS colour names"><span class="d-flex"></span>
+                  <datalist id="datalistOptions">
+                  </datalist>
+               </div>
+               <div class="input-group p-0  col-12">
+                  <div class="">
+                     <div class="col pb-3 mt-3">
+                        <input id="mypick" class="form-control converter" type="color"  name="head" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top"  data-icon="&#xe90a;" title="Colour Picker" >
+                     </div>
+                     <div class="col  pt-3">
+                        <input type="submit" id="submit" class="my_submit p-1 ps-4 pe-4 w-100" value="Add Colour" disabled>
+                     </div>
+                  </div>
+               </div>
+            </form>
+         </section>
+         <!-- spot colours  -->
+         <section class="row bottom-border   ">
+            <div class="p-0 m-0   p-4 bottom-border">
+               <h2 class="m-0 p-0  ">Spot Colours</h2>
+            </div>
+            <div class="col  p-0 m-0  p-4 pt-5 position-relative ">
+               <div class="shade p-0">
+                  <svg version="1.1" class="triangle" viewBox="0 0 100 195" preserveAspectRatio="none"  >
+                     <polygon points="288,560 0,560 0,0 "/>
+                  </svg>
+               </div>
+               <div id="spotcols" class="container-fluid     ">
+                  <div class="row spot-col mb-4">
+                     <div class="col-2 remove d-flex align-items-center justify-content-center">
+                        <span class="icon-document-delete"></span>
+                     </div>
+                     <div class="col-8 spot-1 "></div>
+                     <div class="col-2 draggin d-flex align-items-center justify-content-center">
+                        <span class="icon-drag_indicator"></span>
+                     </div>
+                  </div>
+                  <div class="row spot-col mb-4">
+                     <div class="col-2 remove d-flex align-items-center justify-content-center">
+                        <span class="icon-document-delete"></span>
+                     </div>
+                     <div class="col-8 spot-2 "></div>
+                     <div class="col-2 draggin d-flex align-items-center justify-content-center">
+                        <span class="icon-drag_indicator"></span>
+                     </div>
+                  </div>
+                  <div class="row spot-col mb-4">
+                     <div class="col-2 remove d-flex align-items-center justify-content-center">
+                        <span class="icon-document-delete"></span>
+                     </div>
+                     <div class="col-8 spot-3 "></div>
+                     <div class="col-2 draggin d-flex align-items-center justify-content-center">
+                        <span class="icon-drag_indicator"></span>
+                     </div>
+                  </div>
+               </div>
+               <div class=" p-0 m-0  pt-5  ">
+                  <div id="gradpreview" style="transition: all 4s linear;" class=" h-100" >
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- list options  -->
+         <section class="row ">
+            <div class="row  p-0 m-0   p-4  ">
+               <h2 class=" m-0 p-0   "   data-icon="&#xe907;"> <a class="collapse-title" data-bs-toggle="collapse" href="#list-options"  aria-expanded="false" aria-controls="list-options"> list options<span class="icon-arrow_right"></span></a></h2>
+            </div>
+            <div class="row p-0 m-0  p-4  bottom-border collapse" id="list-options">
+               <div class="listOptions row p-0 m-0">
+                  <div class="p-0">
+                     <p>After and before the list</p>
+                     <div class="input-group m-0 p-0 mb-4">
+                        <span class="input-group-text rounded-0">Before </span>
+                        <input type="text" aria-label="First name" class="form-control">
+                        <span class="input-group-text">After</span>
+                        <input type="text" aria-label="Last name" class="form-control">
+                     </div>
+                  </div>
+                  <div class="p-0 mt-4" id="myGroup">
+                     <p>Colour format</p>
+                     <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="hexhex"    checked >
+                        <label class="form-check-label" for="inlineRadio1">HEX</label>
+                     </div>
+                     <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="rgbrgb"  >
+                        <label class="form-check-label rounded-0" for="inlineRadio2">RGB</label>
+                     </div>
+                     <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="hslhsl"   >
+                        <label class="form-check-label" for="inlineRadio3">HSL</label>
+                     </div>
+                     <p class="pt-3">Before and after items</p>
+                     <div class="pt-4">
+                        <div class="  " id="hexhex"   >
+                           <div class="input-group m-0 p-0 mb-4">
+                              <span class="input-group-text rounded-0">Before </span>
+                              <input type="text" aria-label="Before hexhex value" class="form-control">
+                              <span class="input-group-text rounded-0">After</span>
+                              <input type="text" aria-label="After HEX value" class="form-control">
+                           </div>
+                        </div>
+                        <div class=" d-none " id="rgbrgb"   >
+                           <p>Red</p>
+                           <div class="input-group m-0 p-0 mb-4">
+                              <span class="input-group-text rounded-0">Before </span>
+                              <input type="text" aria-label="First name" class="form-control">
+                              <span class="input-group-text  rounded-0">After</span>
+                              <input type="text" aria-label="Last name" class="form-control">
+                           </div>
+                           <p>Green</p>
+                           <div class="input-group m-0 p-0 mb-4">
+                              <span class="input-group-text rounded-0">Before </span>
+                              <input type="text" aria-label="First name" class="form-control">
+                              <span class="input-group-text rounded-0">After</span>
+                              <input type="text" aria-label="Last name" class="form-control">
+                           </div>
+                           <p>Blue</p>
+                           <div class="input-group m-0 p-0 mb-4">
+                              <span class="input-group-text rounded-0">Before </span>
+                              <input type="text" aria-label="First name" class="form-control">
+                              <span class="input-group-text rounded-0">After</span>
+                              <input type="text" aria-label="Last name" class="form-control">
+                           </div>
+                        </div>
+                        <div class=" d-none " id="hslhsl"   >
+                           <p>Hue</p>
+                           <div class="input-group m-0 p-0 mb-4">
+                              <span class="input-group-text rounded-0">Before </span>
+                              <input type="text" aria-label="First name" class="form-control">
+                              <span class="input-group-text rounded-0">After</span>
+                              <input type="text" aria-label="Last name" class="form-control">
+                           </div>
+                           <p>Saturation</p>
+                           <div class="input-group m-0 p-0 mb-4">
+                              <span class="input-group-text rounded-0">Before </span>
+                              <input type="text" aria-label="First name" class="form-control">
+                              <span class="input-group-text rounded-0">After</span>
+                              <input type="text" aria-label="Last name" class="form-control">
+                           </div>
+                           <p>Luminance</p>
+                           <div class="input-group m-0 p-0 mb-4">
+                              <span class="input-group-text rounded-0">Before </span>
+                              <input type="text" aria-label="First name" class="form-control">
+                              <span class="input-group-text rounded-0">After</span>
+                              <input type="text" aria-label="Last name" class="form-control">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- preview  -->
+         <section class="row m-5">
+            <h2>f</h2>
+         </section>
+         <footer>
+         </footer>
+      </div>
+      <script type="module" src="/main.js"></script>
+   </body>
 </html>

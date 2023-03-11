@@ -18,7 +18,7 @@ tooltips
 
   .custom-tooltip.tooltip > .tooltip-inner{
     background: $accent;
-    color: $black-1;
+    color: $black-4;
     border-radius: 0;
     box-shadow: 0px 2px 4px rgba(22, 22, 22, 0.6);
 
@@ -108,7 +108,7 @@ tooltips
         bottom: 0!important;
         right: -3px!important;    
         box-shadow: unset!important;
-        padding-top: 7px!important;
+        padding-top: 5px!important;
         // transition: all 1s;
 
     }

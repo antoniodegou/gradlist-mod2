@@ -52,8 +52,48 @@ for(let i = 0; i < keys.length; i++) {
    select.appendChild(el);
 }
 
+/* __________
+-- Colour OUTPUT format options --
+__________ */ 
+
+const  getSelectedValue = document.querySelectorAll( 'input[name="inlineRadioOptions"] ');   
+ 
+getSelectedValue.forEach(function(elem){
+  elem.addEventListener('click', function(e){
+    //handles the hide-block classes for the clicked element
+    const val = e.target.value
+    document.getElementById(val).checked = true
+    document.getElementById(val).classList.remove('d-none')
+    document.getElementById(val).classList.add('d-block')
+  
+    //handles the hide-block classes for the elements not clicked
+    getSelectedValue.forEach(function(elem2){
+      if(elem !== elem2){
+        document.getElementById(elem2.id).check = false
+        document.getElementById(elem2.value).classList.remove('d-block')
+        document.getElementById(elem2.value).classList.add('d-none')
+      }
+    })
+
+  })
+})
+ 
 
 
 export {
     tooltipList,addDarkMode,addLightMode,toggleTheme ,checkPreference,btn
 }
+
+
+
+
+
+// var collapseElementList = [].slice.call(document.querySelectorAll('.collapse'))
+// var collapseList = collapseElementList.map(function (collapseEl) {
+//   return new bootstrap.Collapse(collapseEl)
+// })
+
+// var myCollapse = document.getElementById('hay')
+// var bsCollapse = new bootstrap.Collapse(myCollapse, {
+//   toggle: false
+// })

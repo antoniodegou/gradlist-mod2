@@ -7,3 +7,6 @@ import './style.scss'
 // import * as convert from 'color-convert'
 // import cssKeyword from "color-name";
 import * as cosmetic from '/assets/js/cosmetic.js'
+import * as formValidation from '/assets/js/formvalidation.js'
+
+
