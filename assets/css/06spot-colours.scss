@@ -44,7 +44,7 @@ spot colours
   
   #gradpreview{
     background: inherit;
-    height: auto;
+    // height: calc(3.5rem + 2px)!important;
     // animation: fadeMe 2s;
     // transition: all $transition-time!important;
   }

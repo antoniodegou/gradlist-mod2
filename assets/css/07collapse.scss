@@ -20,10 +20,13 @@
 
 input[type="radio"]{
     border-radius: 50%!important;
-    height:20px; 
-width:20px;
+    height:32px; 
+width:32px;
 }
 
+.form-check-label{
+    height: 32px!important;
+}
 .form-check-input:checked {
     background-color: $accent;
     // border-color: #0d6efd;

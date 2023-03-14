@@ -9,6 +9,7 @@
    <body class="dark-mode p-0 m-0">
       <div class="container-fluid  ">
          <!-- header -->
+
          <header class="row    bottom-border  p-4">
             <div class="col m-0 p-0">
                <h1 class="col m-0">gradList</h1>
@@ -24,6 +25,7 @@
                </label>
             </div>
          </header>
+
          <!-- converter -->
          <section class="row   bottom-border ">
             <div class="  p-0 m-0   p-4 bottom-border">
@@ -35,21 +37,25 @@
                      <polygon points="288,560 0,560 0,0 "/>
                   </svg>
                </div>
-               <div class="input-group p-0 pb-4 col-12 "> 
-                  <label for="hex_code" class="form-label col-12" >HEX</label>
+               <div class="form-floating p-0 pb-4 col-12 "> 
+                  
                   <input type="text" id="hex_code" class="form-control converter" name="hex_code" pattern="[0-9a-fA-F]{3}([0-9a-fA-F]{3})?" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" data-icon="&#xe904;&#xe903;"    title="Hex code with #" placeholder="Use #" required> <span></span>
+                  <label for="hex_code" class="  form-label col-12  " >HEX</label>
                </div>
-               <div class="input-group p-0 pb-4 col-12 "> 
-                  <label for="rgb" class="form-label col-12 ">RGB</label>    
+               <div class="form-floating  p-0 pb-4 col-12 "> 
+                  
                   <input type="text" id="rgb" class="form-control converter" name="rgb"  pattern="^(?:(?:^|,\s*)([01]?\d\d?|2[0-4]\d|25[0-5])){3}$"  data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" data-icon="&#xe904;&#xe903;"     title="RGB values"  placeholder="[0-255], [0-255], [0-255]" required> <span></span> 
+                  <label for="rgb" class="form-label col-12 ">RGB</label>    
                </div>
-               <div class="input-group p-0 pb-4 col-12 "> 
-                  <label for="hsl" class="form-label col-12">HSL</label>              
+               <div class="form-floating  p-0 pb-4 col-12 "> 
+                               
                   <input type="text" class="form-control converter" name="hsl"  id="hsl"  placeholder="[0-360], [0-100], [0-100]" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top"  data-icon="&#xe904;&#xe903;"    title="HSl values" required> <span></span> 
+                  <label for="hsl" class="form-label col-12">HSL</label> 
                </div>
-               <div class="input-group p-0 pb-4 col-12 ">
-                  <label for="CSScolours" class="form-label col-12">CSS  keywords (approximated value)</label>
+               <div class="form-floating  p-0 pb-4 col-12 ">
+                  
                   <input id="CSScolours" class="form-control converter  " list="datalistOptions"  placeholder="CSS colours" data-bs-toggle="tooltip" data-bs-html="true" data-bs-custom-class="custom-tooltip" data-bs-placement="top"  title="CSS colour names"><span class="d-flex"></span>
+                  <label for="CSScolours" class="form-label col-12">CSS  keywords (approximated value)</label>
                   <datalist id="datalistOptions">
                   </datalist>
                </div>
@@ -65,6 +71,7 @@
                </div>
             </form>
          </section>
+
          <!-- spot colours  -->
          <section class="row bottom-border   ">
             <div class="p-0 m-0   p-4 bottom-border">
@@ -106,107 +113,158 @@
                   </div>
                </div>
                <div class=" p-0 m-0  pt-5  ">
-                  <div id="gradpreview" style="transition: all 4s linear;" class=" h-100" >
+                  <div id="gradpreview"  >
                   </div>
                </div>
             </div>
          </section>
+
          <!-- list options  -->
          <section class="row ">
-            <div class="row  p-0 m-0   p-4  ">
-               <h2 class=" m-0 p-0   "   data-icon="&#xe907;"> <a class="collapse-title" data-bs-toggle="collapse" href="#list-options"  aria-expanded="false" aria-controls="list-options"> list options<span class="icon-arrow_right"></span></a></h2>
+            <div class="row p-0 m-0 p-4 pb-1">
+               <h2 class="m-0 p-0"   data-icon="&#xe907;"> 
+                <a class="collapse-title" type="button" data-bs-toggle="collapse" href="#list-options" data-bs-target="#list-options" aria-expanded="false" aria-controls="list-options"> list options<span class="icon-arrow_right"></span></a>
+              </h2>
             </div>
-            <div class="row p-0 m-0  p-4  bottom-border collapse" id="list-options">
-               <div class="listOptions row p-0 m-0">
-                  <div class="p-0">
-                     <p>After and before the list</p>
-                     <div class="input-group m-0 p-0 mb-4">
-                        <span class="input-group-text rounded-0">Before </span>
-                        <input type="text" aria-label="First name" class="form-control">
-                        <span class="input-group-text">After</span>
-                        <input type="text" aria-label="Last name" class="form-control">
-                     </div>
+            <div class="row p-0 m-0  p-4  bottom-border container-fluid    collapse show" id="list-options">
+
+
+              <div class="row p-0 m-0 pb-5">
+                  <div class="p-0 m-0">
+                    <p class="m-0 p-0 mb-1">Gradient options</p>
                   </div>
-                  <div class="p-0 mt-4" id="myGroup">
-                     <p>Colour format</p>
-                     <div class="form-check form-check-inline">
+                  <div class="row d-flex p-0 m-0 align-items-end ">
+                    <div class="p-0 m-0 col row ">
+                  
+                      <input  type="checkbox"  id="my_switch">
+                      <label class="my_switch_label fs1" for="my_switch">
+                              <span  >rgb</span> 
+                              <span  >hsl</span>
+                      </label>
+                     
+                    </div>
+                    <div class="input-group p-0 m-0 col ">
+                      <span class="input-group-text rounded-0">Steps</span>
+                      <input type="number" aria-label="After list" class="form-control" value="2" step="1" pattern="\d+">
+                    </div>
+                  </div>
+              </div>
+
+              <div class="row p-0 m-0 pb-5">
+                <p class="p-0 m-0 mb-2">After and before the list</p>
+                  <div class="input-group m-0 p-0  ">
+                    <span class="input-group-text rounded-0">Before </span>
+                    <input type="text" aria-label="Before list" class="form-control" value="const col = {">
+                    <span class="input-group-text">After</span>
+                    <input type="text" aria-label="After list" class="form-control" value="}">
+                  </div>
+              </div>
+
+              <div class="p-0  " id="myGroup">
+                     <p class="m-0 p-0 mb-2 ">Colour format</p>
+                     <div class="form-check form-check-inline  ">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="hexhex"    checked >
-                        <label class="form-check-label" for="inlineRadio1">HEX</label>
+                        <label class="form-check-label mt-2 ms-2" for="inlineRadio1">HEX</label>
                      </div>
                      <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="rgbrgb"  >
-                        <label class="form-check-label rounded-0" for="inlineRadio2">RGB</label>
+                        <label class="form-check-label rounded-0 mt-2 ms-2" for="inlineRadio2">RGB</label>
                      </div>
                      <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="hslhsl"   >
-                        <label class="form-check-label" for="inlineRadio3">HSL</label>
+                        <label class="form-check-label mt-2 ms-2" for="inlineRadio3">HSL</label>
                      </div>
-                     <p class="pt-3">Before and after items</p>
+ 
                      <div class="pt-4">
                         <div class="  " id="hexhex"   >
+                          <p class="mb-1">Before and after Hex</p>
                            <div class="input-group m-0 p-0 mb-4">
                               <span class="input-group-text rounded-0">Before </span>
-                              <input type="text" aria-label="Before hexhex value" class="form-control">
+                              <input type="text" aria-label="Before hexhex value" class="form-control" value="#">
                               <span class="input-group-text rounded-0">After</span>
-                              <input type="text" aria-label="After HEX value" class="form-control">
+                              <input type="text" aria-label="After HEX value" value="," class="form-control">
                            </div>
                         </div>
                         <div class=" d-none " id="rgbrgb"   >
-                           <p>Red</p>
+                           <p class="mb-1">Before and after Red</p>
                            <div class="input-group m-0 p-0 mb-4">
                               <span class="input-group-text rounded-0">Before </span>
-                              <input type="text" aria-label="First name" class="form-control">
+                              <input type="text" aria-label="Before Red Value" class="form-control" value="rgb(">
                               <span class="input-group-text  rounded-0">After</span>
-                              <input type="text" aria-label="Last name" class="form-control">
+                              <input type="text" aria-label="After Red Value" class="form-control">
                            </div>
-                           <p>Green</p>
+                           <p class="mb-1">Before and after Green</p>
                            <div class="input-group m-0 p-0 mb-4">
                               <span class="input-group-text rounded-0">Before </span>
-                              <input type="text" aria-label="First name" class="form-control">
+                              <input type="text" aria-label="Before Green Value" class="form-control">
                               <span class="input-group-text rounded-0">After</span>
-                              <input type="text" aria-label="Last name" class="form-control">
+                              <input type="text" aria-label="After Green Value" class="form-control">
                            </div>
-                           <p>Blue</p>
+                           <p class="mb-1">Before and after Blue</p>
                            <div class="input-group m-0 p-0 mb-4">
                               <span class="input-group-text rounded-0">Before </span>
-                              <input type="text" aria-label="First name" class="form-control">
+                              <input type="text" aria-label="Before Blue Value" class="form-control">
                               <span class="input-group-text rounded-0">After</span>
-                              <input type="text" aria-label="Last name" class="form-control">
+                              <input type="text" aria-label="After Blue Value" class="form-control" value=")">
                            </div>
                         </div>
-                        <div class=" d-none " id="hslhsl"   >
-                           <p>Hue</p>
+                        <div class=" d-none " id="hslhsl">
+                           <p class="mb-1">Before and after Hue</p>
                            <div class="input-group m-0 p-0 mb-4">
                               <span class="input-group-text rounded-0">Before </span>
-                              <input type="text" aria-label="First name" class="form-control">
+                              <input type="text" aria-label="Before Hue Value" class="form-control" value="hsl(">
                               <span class="input-group-text rounded-0">After</span>
-                              <input type="text" aria-label="Last name" class="form-control">
+                              <input type="text" aria-label="After Hue Value" class="form-control" value="deg">
                            </div>
-                           <p>Saturation</p>
+                           <p class="mb-1">Before and after Saturation</p>
                            <div class="input-group m-0 p-0 mb-4">
                               <span class="input-group-text rounded-0">Before </span>
-                              <input type="text" aria-label="First name" class="form-control">
+                              <input type="text" aria-label="Before Saturation Value" class="form-control" value=",">
                               <span class="input-group-text rounded-0">After</span>
-                              <input type="text" aria-label="Last name" class="form-control">
+                              <input type="text" aria-label="After Saturation Value" class="form-control" value="%,">
                            </div>
-                           <p>Luminance</p>
+                           <p class="mb-1">Before and after Luminance</p>
                            <div class="input-group m-0 p-0 mb-4">
                               <span class="input-group-text rounded-0">Before </span>
-                              <input type="text" aria-label="First name" class="form-control">
+                              <input type="text" aria-label="Before Luminance Value" class="form-control"  >
                               <span class="input-group-text rounded-0">After</span>
-                              <input type="text" aria-label="Last name" class="form-control">
+                              <input type="text" aria-label="After Luminance Value" class="form-control" value="%)">
                            </div>
                         </div>
                      </div>
-                  </div>
-               </div>
+              </div>
+
             </div>
          </section>
+
          <!-- preview  -->
-         <section class="row m-5">
-            <h2>f</h2>
+         <section class="row bottom-border">
+          <div class="p-4 pb-0">
+            <h2 class="p-0 m-0">Your List:</h2>
+          </div>
+           
+            <div class="p-4 ">
+              <div id="my-list" class="p-4">
+                <p class="p-0 m-0">const list = {
+                  hey, hey ,hey, hey
+                }
+                </p>
+              </div>
+              <div class="col-3  pt-4">
+                <input type="submit" id="submit" class="my_submit p-1 ps-4 pe-4 w-100" value="Copy" disabled>
+             </div>
+              <div id="swatches-preview" class="pt-4">
+                <div class="swatch swatch1">
+                </div>
+              </div>
+            </div>
          </section>
-         <footer>
+
+         <!-- footer  -->
+         <footer class="p-4">
+          <div class="d-flex justify-content-center ">
+            <p class="p-0 m-0">© <span id="currentYear"></span>, Antonio de Gou. All Right Reserved</p>
+         </div>
          </footer>
       </div>
       <script type="module" src="/main.js"></script>

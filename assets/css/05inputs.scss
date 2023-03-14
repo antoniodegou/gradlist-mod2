@@ -150,9 +150,9 @@ invalid fields
         border-radius: 50%;
         text-align: center;
         margin:  auto 0;
-        top: 3px; 
-         bottom: 0; 
-         right: 17px;
+        top: 0px; 
+         bottom: 22px; 
+         right: 10px;
 
         z-index: 1000!important;
         transform: rotate(270deg);
@@ -171,9 +171,9 @@ invalid fields
         border-radius: 50%;
         text-align: center;
         margin:  auto 0;
-        top: 3px; 
-         bottom: 0; 
-         right: 17px;
+        top: 0px; 
+         bottom: 22px; 
+         right: 10px;
          transform: rotate(0deg);
         z-index: 1000!important;
         transition: all $transition-time;
