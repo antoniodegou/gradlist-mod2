@@ -17,17 +17,19 @@ let spotColList = []
 const submit = document.getElementById("submit")
 const spotCols = document.getElementById('spotcols')
 const spotPrev = document.getElementById('gradpreview')
+let removeButtons = document.querySelectorAll('.remove')
 
 submit.addEventListener('click', function(e){
   e.preventDefault()
   let hex = document.getElementById('hex_code');
   spotColList.push(hex.value)
- let a = ''
- let b= ''
+  let a = ''
+  let b= ''
+
   spotColList.forEach(item => {
     a += `
     <div class="row spot-col mb-3">
-      <div class="col-2 remove d-flex align-items-center justify-content-center">
+      <div class="col-2 remove d-flex align-items-center justify-content-center" data-col="${item}">
         <span class="icon-document-delete"></span>
       </div>
       <div class="col-8 spot-1 " style="background-color:#${item}"data-col="${item}"></div>
@@ -36,22 +38,47 @@ submit.addEventListener('click', function(e){
       </div>
     </div>
     `
-    // console.log(typeof item)
       b+=`#${item},`
   })
 
-
   spotCols.innerHTML = a
   const spotPrev = document.getElementById('gradpreview')
-
   let arr = spotColList.map(i => '#' + i ).join(' , ');
+  let len = spotColList.length
 
-  let len =  spotColList.length
   spotPrev.style.transition =  'all 1s'
   spotPrev.style.background = len === 1 ? "#"+spotColList[0] : `linear-gradient(to bottom, ${arr})`
   spotPrev.style.height = `${spotColList.length * 38}px`
 
-  
+  // redo event listeners for removing apot colors
+  removeButtons = document.querySelectorAll('.remove')
+  removeButtons.forEach(function(elem){
+    elem.addEventListener('click', function(e){
+        console.log("as "+ spotColList)
+        e.preventDefault()
+        let aa= e.target
+        let getElementDelete =   aa.parentNode.getAttribute('data-col')
+        
+        // remove from spot col list 
+        spotColList = spotColList.filter(e => e !== getElementDelete)
+         // remove from dom
+        elem.parentNode.remove()
+        // remove from preview
+        let arr = spotColList.map(i => '#' + i ).join(' , ');
+        let len = spotColList.length
+        spotPrev.style.transition =  'all 1s'
+        spotPrev.style.background = len === 1 ? "#"+spotColList[0] : `linear-gradient(to bottom, ${arr})`
+        spotPrev.style.height = `${spotColList.length * 38}px`
+        
+        console.log("bs "+spotColList)
+
+    })
 })
+ 
+})
+
+
+// remove the thing
+
 
 
