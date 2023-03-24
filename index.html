@@ -6,11 +6,11 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" >
       <title>Vite App</title>
    </head>
-   <body class="dark-mode p-0 m-0">
-      <div class="container-fluid  ">
+   <body class="dark-mode container-fluid p-0 m-0 ">
+      <div class=" row p-0 m-0 container-fluid">
          <!-- header -->
 
-         <header class="row    bottom-border  p-4">
+         <header class="row    bottom-border p-0 m-0  p-4 ">
             <div class="col m-0 p-0">
                <h1 class="col m-0">gradList</h1>
                <p class="col m-0">create lists of gradient colours</p>
@@ -27,16 +27,12 @@
          </header>
 
          <!-- converter -->
-         <section class="row   bottom-border ">
+         <section class="row   bottom-border  col-md-6  p-0 m-0">
             <div class="  p-0 m-0   p-4 bottom-border">
                <h2 class="m-0 p-0  ">Converter</h2>
             </div>
             <form  id="myForm" class="    p-0 m-0  p-4 position-relative">
-               <div class="shade p-0">
-                  <svg version="1.1" class="triangle" viewBox="0 0 100 195" preserveAspectRatio="none"  >
-                     <polygon points="288,560 0,560 0,0 "/>
-                  </svg>
-               </div>
+
                <div class="form-floating p-0 pb-4 col-12 "> 
                   
                   <input type="text" id="hex_code" class="form-control converter" name="hex_code" pattern="[0-9a-fA-F]{3}([0-9a-fA-F]{3})?" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" data-icon="&#xe904;&#xe903;"    title="Hex code with #" placeholder="Use #" required> <span></span>
@@ -73,18 +69,14 @@
          </section>
 
          <!-- spot colours  -->
-         <section class="row bottom-border   ">
+         <section class="row bottom-border col col-md-6  p-0 m-0  align-items-start position-relative">
             <div class="p-0 m-0   p-4 bottom-border">
                <h2 class="m-0 p-0  ">Spot Colours</h2>
             </div>
-            <div class="col  p-0 m-0  p-4 pt-5 position-relative ">
-               <div class="shade p-0">
-                  <svg version="1.1" class="triangle" viewBox="0 0 100 195" preserveAspectRatio="none"  >
-                     <polygon points="288,560 0,560 0,0 "/>
-                  </svg>
-               </div>
-               <div id="spotcols" class="container-fluid     ">
-                  <div class="row spot-col mb-4">
+            <div class="col  p-0 m-0  p-4 pt-4  col position-relative align-self-start h-100">
+
+               <div id="spotcols" class="container-fluid">
+                  <!-- <div class="row spot-col mb-4">
                      <div class="col-2 remove d-flex align-items-center justify-content-center">
                         <span class="icon-document-delete"></span>
                      </div>
@@ -110,7 +102,7 @@
                      <div class="col-2 draggin d-flex align-items-center justify-content-center">
                         <span class="icon-drag_indicator"></span>
                      </div>
-                  </div>
+                  </div> -->
                </div>
                <div class=" p-0 m-0  pt-5  ">
                   <div id="gradpreview"  >
@@ -120,7 +112,7 @@
          </section>
 
          <!-- list options  -->
-         <section class="row ">
+         <section class="row  col-md-6 ">
             <div class="row p-0 m-0 p-4 pb-1">
                <h2 class="m-0 p-0"   data-icon="&#xe907;"> 
                 <a class="collapse-title" type="button" data-bs-toggle="collapse" href="#list-options" data-bs-target="#list-options" aria-expanded="false" aria-controls="list-options"> list options<span class="icon-arrow_right"></span></a>
@@ -130,22 +122,26 @@
 
 
               <div class="row p-0 m-0 pb-5">
-                  <div class="p-0 m-0">
-                    <p class="m-0 p-0 mb-1">Gradient options</p>
-                  </div>
+
                   <div class="row d-flex p-0 m-0 align-items-end ">
-                    <div class="p-0 m-0 col row ">
+                    <div class="p-0 m-0   row ">
                   
-                      <input  type="checkbox"  id="my_switch">
-                      <label class="my_switch_label fs1" for="my_switch">
-                              <span  >rgb</span> 
-                              <span  >hsl</span>
-                      </label>
-                     
+                      <p class="m-0 p-0 mb-2 ">Gradient Interpolation Mode  </p>
+                      <div class="p-0 mb-4">
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input list-options" type="radio" name="interpolation" id="rgbInterpolation" value="rgbInterpolation"  checked>
+                          <label class="form-check-label rounded-0 mt-2 ms-2" for="rgbInterpolation">RGB</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input list-options" type="radio" name="interpolation" id="hslInterpolation" value="hslInterpolation"   >
+                          <label class="form-check-label mt-2 ms-2" for="hslInterpolation">HSL</label>
+                        </div>
+                      </div>
                     </div>
-                    <div class="input-group p-0 m-0 col ">
-                      <span class="input-group-text rounded-0">Steps</span>
-                      <input type="number" aria-label="After list" class="form-control" value="2" step="1" pattern="\d+">
+                    <div class=" p-0 m-0 col ">
+                      <p class="m-0 p-0 mb-2 ">Gradient Interpolation Steps  </p>
+                      <!-- <span class="input-group-text rounded-0">Steps</span> -->
+                      <input id="intSteps" type="number" aria-label="After list" class="form-control list-options" value="2" step="1" pattern="\d+">
                     </div>
                   </div>
               </div>
@@ -154,81 +150,81 @@
                 <p class="p-0 m-0 mb-2">After and before the list</p>
                   <div class="input-group m-0 p-0  ">
                     <span class="input-group-text rounded-0">Before </span>
-                    <input type="text" aria-label="Before list" class="form-control" value="const col = {">
+                    <input id="beforeList" type="text" aria-label="Before list" class="form-control list-options" value="const col = {">
                     <span class="input-group-text">After</span>
-                    <input type="text" aria-label="After list" class="form-control" value="}">
+                    <input id="afterList" type="text" aria-label="After list" class="form-control list-options" value="}">
                   </div>
               </div>
 
               <div class="p-0  " id="myGroup">
-                     <p class="m-0 p-0 mb-2 ">Colour format</p>
+                     <p class="m-0 p-0 mb-2 ">List Colour format</p>
                      <div class="form-check form-check-inline  ">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="hexhex"    checked >
-                        <label class="form-check-label mt-2 ms-2" for="inlineRadio1">HEX</label>
+                        <input class="form-check-input list-options" type="radio" name="inlineRadioOptions" id="hexformat-input" value="hexformat"    checked >
+                        <label class="form-check-label mt-2 ms-2" for="hexformat">HEX</label>
                      </div>
                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="rgbrgb"  >
-                        <label class="form-check-label rounded-0 mt-2 ms-2" for="inlineRadio2">RGB</label>
+                        <input class="form-check-input list-options" type="radio" name="inlineRadioOptions" id="rgbformat-input" value="rgbformat"  >
+                        <label class="form-check-label rounded-0 mt-2 ms-2" for="rgbformat">RGB</label>
                      </div>
                      <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="hslhsl"   >
-                        <label class="form-check-label mt-2 ms-2" for="inlineRadio3">HSL</label>
+                        <input class="form-check-input list-options" type="radio" name="inlineRadioOptions" id="hslformat-input" value="hslformat"   >
+                        <label class="form-check-label mt-2 ms-2" for="hslformat">HSL</label>
                      </div>
  
                      <div class="pt-4">
-                        <div class="  " id="hexhex"   >
+                        <div class="  " id="hexformat"   >
                           <p class="mb-1">Before and after Hex</p>
                            <div class="input-group m-0 p-0 mb-4">
                               <span class="input-group-text rounded-0">Before </span>
-                              <input type="text" aria-label="Before hexhex value" class="form-control" value="#">
+                              <input id="beforeHEX" type="text" aria-label="Before hexhex value" class="form-control list-options" value="#">
                               <span class="input-group-text rounded-0">After</span>
-                              <input type="text" aria-label="After HEX value" value="," class="form-control">
+                              <input id="afterHEX" type="text" aria-label="After HEX value" value="," class="form-control list-options">
                            </div>
                         </div>
-                        <div class=" d-none " id="rgbrgb"   >
+                        <div class=" d-none " id="rgbformat"   >
                            <p class="mb-1">Before and after Red</p>
                            <div class="input-group m-0 p-0 mb-4">
                               <span class="input-group-text rounded-0">Before </span>
-                              <input type="text" aria-label="Before Red Value" class="form-control" value="rgb(">
+                              <input id="beforeRed" type="text" aria-label="Before Red Value" class="form-control list-options" value="rgb(">
                               <span class="input-group-text  rounded-0">After</span>
-                              <input type="text" aria-label="After Red Value" class="form-control">
+                              <input id="afterRed" type="text" aria-label="After Red Value" class="form-control list-options" value=", ">
                            </div>
                            <p class="mb-1">Before and after Green</p>
                            <div class="input-group m-0 p-0 mb-4">
                               <span class="input-group-text rounded-0">Before </span>
-                              <input type="text" aria-label="Before Green Value" class="form-control">
+                              <input id="beforeGreen" type="text" aria-label="Before Green Value" class="form-control list-options">
                               <span class="input-group-text rounded-0">After</span>
-                              <input type="text" aria-label="After Green Value" class="form-control">
+                              <input id="afterGreen" type="text" aria-label="After Green Value" class="form-control list-options" value=",">
                            </div>
                            <p class="mb-1">Before and after Blue</p>
                            <div class="input-group m-0 p-0 mb-4">
                               <span class="input-group-text rounded-0">Before </span>
-                              <input type="text" aria-label="Before Blue Value" class="form-control">
+                              <input id="beforeBlue" type="text" aria-label="Before Blue Value" class="form-control list-options">
                               <span class="input-group-text rounded-0">After</span>
-                              <input type="text" aria-label="After Blue Value" class="form-control" value=")">
+                              <input id="afterBlue" type="text" aria-label="After Blue Value" class="form-control list-options" value="), ">
                            </div>
                         </div>
-                        <div class=" d-none " id="hslhsl">
+                        <div class=" d-none " id="hslformat">
                            <p class="mb-1">Before and after Hue</p>
                            <div class="input-group m-0 p-0 mb-4">
                               <span class="input-group-text rounded-0">Before </span>
-                              <input type="text" aria-label="Before Hue Value" class="form-control" value="hsl(">
+                              <input id="beforeH" type="text" aria-label="Before Hue Value" class="form-control list-options" value="hsl(">
                               <span class="input-group-text rounded-0">After</span>
-                              <input type="text" aria-label="After Hue Value" class="form-control" value="deg">
+                              <input id="afterH" type="text" aria-label="After Hue Value" class="form-control list-options" value="deg, ">
                            </div>
                            <p class="mb-1">Before and after Saturation</p>
                            <div class="input-group m-0 p-0 mb-4">
                               <span class="input-group-text rounded-0">Before </span>
-                              <input type="text" aria-label="Before Saturation Value" class="form-control" value=",">
+                              <input id="beforeS" type="text" aria-label="Before Saturation Value" class="form-control list-options" value=" ">
                               <span class="input-group-text rounded-0">After</span>
-                              <input type="text" aria-label="After Saturation Value" class="form-control" value="%,">
+                              <input id="afterS" type="text" aria-label="After Saturation Value" class="form-control list-options" value="%, ">
                            </div>
                            <p class="mb-1">Before and after Luminance</p>
                            <div class="input-group m-0 p-0 mb-4">
                               <span class="input-group-text rounded-0">Before </span>
-                              <input type="text" aria-label="Before Luminance Value" class="form-control"  >
+                              <input id="beforeL" type="text" aria-label="Before Luminance Value" class="form-control list-options"  >
                               <span class="input-group-text rounded-0">After</span>
-                              <input type="text" aria-label="After Luminance Value" class="form-control" value="%)">
+                              <input id="afterL" type="text" aria-label="After Luminance Value" class="form-control list-options" value="%), ">
                            </div>
                         </div>
                      </div>
@@ -238,7 +234,7 @@
          </section>
 
          <!-- preview  -->
-         <section class="row bottom-border">
+         <section class="row   col-md-6  bottom-border">
           <div class="p-4 pb-0">
             <h2 class="p-0 m-0">Your List:</h2>
           </div>
@@ -251,7 +247,7 @@
                 </p>
               </div>
               <div class="col-3  pt-4">
-                <input type="submit" id="submit" class="my_submit p-1 ps-4 pe-4 w-100" value="Copy" disabled>
+                <input type="submit" id="copy" class="my_submit p-1 ps-4 pe-4 w-100" value="Copy"  >
              </div>
               <div id="swatches-preview" class="pt-4">
                 <div class="swatch swatch1">

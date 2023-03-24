@@ -4,25 +4,16 @@ spot colours
 
 .spot-col{
     height:38px!important;
+    // border: $border-width solid $white-1;
     // z-index: 1000!important;
   }
   
-  .spot-1{
-    background-color: tomato;
-  }
+ 
   
-  .spot-2{
-    background-color: greenyellow;
-  }
-  
-  .spot-3{
-    background-color: orange;
-  }
-  
-  .spot-1, .spot-2, .spot-3{
+ .colour-demo{
     border: $border-width solid $white-1;
     border-left:unset;
-    border-right:unset;
+    // border-right:unset;
   }
   
   .remove, .draggin{

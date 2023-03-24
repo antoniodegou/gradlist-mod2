@@ -187,3 +187,20 @@ submit
     height: 42px;
     transition: all 1s ;
 } 
+
+
+.remove:before{
+  position: absolute;
+  content: "\e905";
+  font-family: 'icomoon';
+  top: auto; 
+  left: auto;
+  right: auto;
+}
+
+pre{
+  // line-height: .9;
+  white-space: pre-wrap;
+  overflow:hidden;
+
+}

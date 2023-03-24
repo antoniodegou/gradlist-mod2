@@ -11,6 +11,7 @@
   "devDependencies": {
     "bootstrap": "^5.2.3",
     "color-convert": "^2.0.1",
+    "colorjs.io": "^0.4.3",
     "javascript-color-gradient": "^2.4.4",
     "sass": "^1.58.3",
     "vite": "^4.1.0"
