@@ -1,268 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <meta charset="UTF-8" >
-      <link rel="icon" type="image/svg+xml" href="/vite.svg" >
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-      <title>Vite App</title>
+      <meta charset="UTF-8">
+      <link rel="icon" type="image/svg+xml" href="/vite.svg">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Grad List</title>
    </head>
-   <body class="dark-mode container-fluid p-0 m-0 ">
-      <div class=" row p-0 m-0 container-fluid">
-         <!-- header -->
+   <body class="dark-mode  container-lg">
+        <div class="row justify-content-center">
+          <!-- <div class="container  "> -->
 
-         <header class="row    bottom-border p-0 m-0  p-4 ">
-            <div class="col m-0 p-0">
-               <h1 class="col m-0">gradList</h1>
-               <p class="col m-0">create lists of gradient colours</p>
-            </div>
-            <div class="d-flex col  justify-content-between p-0 ">
-               <input  type="checkbox"  id="my_switch">
-               <label class="my_switch_label fs1" for="my_switch">
-                  <!-- <div>  -->
-                  <span class="icon-moon"></span> 
-                  <span class="icon-sun"></span>
-                  <!-- </div> -->
-               </label>
-            </div>
-         </header>
+            <!-- header -->
+            <header class="row col-12">
+              <div class=" pb-4 pt-4 d-flex justify-content-center align-items-center">
+                <div class="  col-6 m-0 p-0  ">
+                  <h1 class="  m-0   pe-3 lh-1">gradList</h1>
+                  <p class="  m-0 lh-1">create lists of gradient colours</p>
+                </div>
+                <div class=" d-flex col-6  m-0  p-0   align-self-end  justify-content-end align-items-center    ">
+                  <input type="checkbox" id="my_switch">
+                  <label class="my_switch_label fs1" for="my_switch">
+                      <span class="icon-moon"></span>
+                      <span class="icon-sun"></span>
+                  </label>
+                </div>
+              </div>
+            </header>
 
-         <!-- converter -->
-         <section class="row   bottom-border  col-md-6  p-0 m-0">
-            <div class="  p-0 m-0   p-4 bottom-border">
-               <h2 class="m-0 p-0  ">Converter</h2>
-            </div>
-            <form  id="myForm" class="    p-0 m-0  p-4 position-relative">
-
-               <div class="form-floating p-0 pb-4 col-12 "> 
-                  
-                  <input type="text" id="hex_code" class="form-control converter" name="hex_code" pattern="[0-9a-fA-F]{3}([0-9a-fA-F]{3})?" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" data-icon="&#xe904;&#xe903;"    title="Hex code with #" placeholder="Use #" required> <span></span>
-                  <label for="hex_code" class="  form-label col-12  " >HEX</label>
-               </div>
-               <div class="form-floating  p-0 pb-4 col-12 "> 
-                  
-                  <input type="text" id="rgb" class="form-control converter" name="rgb"  pattern="^(?:(?:^|,\s*)([01]?\d\d?|2[0-4]\d|25[0-5])){3}$"  data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" data-icon="&#xe904;&#xe903;"     title="RGB values"  placeholder="[0-255], [0-255], [0-255]" required> <span></span> 
-                  <label for="rgb" class="form-label col-12 ">RGB</label>    
-               </div>
-               <div class="form-floating  p-0 pb-4 col-12 "> 
-                               
-                  <input type="text" class="form-control converter" name="hsl"  id="hsl"  placeholder="[0-360], [0-100], [0-100]" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top"  data-icon="&#xe904;&#xe903;"    title="HSl values" required> <span></span> 
-                  <label for="hsl" class="form-label col-12">HSL</label> 
-               </div>
-               <div class="form-floating  p-0 pb-4 col-12 ">
-                  
-                  <input id="CSScolours" class="form-control converter  " list="datalistOptions"  placeholder="CSS colours" data-bs-toggle="tooltip" data-bs-html="true" data-bs-custom-class="custom-tooltip" data-bs-placement="top"  title="CSS colour names"><span class="d-flex"></span>
-                  <label for="CSScolours" class="form-label col-12">CSS  keywords (approximated value)</label>
-                  <datalist id="datalistOptions">
-                  </datalist>
-               </div>
-               <div class="input-group p-0  col-12">
-                  <div class="">
-                     <div class="col pb-3 mt-3">
-                        <input id="mypick" class="form-control converter" type="color"  name="head" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top"  data-icon="&#xe90a;" title="Colour Picker" >
-                     </div>
-                     <div class="col  pt-3">
-                        <input type="submit" id="submit" class="my_submit p-1 ps-4 pe-4 w-100" value="Add Colour" disabled>
-                     </div>
+            <!-- converter -->
+            <section class="row  col-12  col-md-5 me-md-3 mb-4   ">
+                <div   class="mybox rounded-2">
+                  <div class="  p-0 m-0   p-4  ">
+                    <h2 class="m-0 p-0  ">Converter</h2>
                   </div>
-               </div>
-            </form>
-         </section>
-
-         <!-- spot colours  -->
-         <section class="row bottom-border col col-md-6  p-0 m-0  align-items-start position-relative">
-            <div class="p-0 m-0   p-4 bottom-border">
-               <h2 class="m-0 p-0  ">Spot Colours</h2>
-            </div>
-            <div class="col  p-0 m-0  p-4 pt-4  col position-relative align-self-start h-100">
-
-               <div id="spotcols" class="container-fluid">
-                  <!-- <div class="row spot-col mb-4">
-                     <div class="col-2 remove d-flex align-items-center justify-content-center">
-                        <span class="icon-document-delete"></span>
-                     </div>
-                     <div class="col-8 spot-1 "></div>
-                     <div class="col-2 draggin d-flex align-items-center justify-content-center">
-                        <span class="icon-drag_indicator"></span>
-                     </div>
-                  </div>
-                  <div class="row spot-col mb-4">
-                     <div class="col-2 remove d-flex align-items-center justify-content-center">
-                        <span class="icon-document-delete"></span>
-                     </div>
-                     <div class="col-8 spot-2 "></div>
-                     <div class="col-2 draggin d-flex align-items-center justify-content-center">
-                        <span class="icon-drag_indicator"></span>
-                     </div>
-                  </div>
-                  <div class="row spot-col mb-4">
-                     <div class="col-2 remove d-flex align-items-center justify-content-center">
-                        <span class="icon-document-delete"></span>
-                     </div>
-                     <div class="col-8 spot-3 "></div>
-                     <div class="col-2 draggin d-flex align-items-center justify-content-center">
-                        <span class="icon-drag_indicator"></span>
-                     </div>
-                  </div> -->
-               </div>
-               <div class=" p-0 m-0  pt-5  ">
-                  <div id="gradpreview"  >
-                  </div>
-               </div>
-            </div>
-         </section>
-
-         <!-- list options  -->
-         <section class="row  col-md-6 ">
-            <div class="row p-0 m-0 p-4 pb-1">
-               <h2 class="m-0 p-0"   data-icon="&#xe907;"> 
-                <a class="collapse-title" type="button" data-bs-toggle="collapse" href="#list-options" data-bs-target="#list-options" aria-expanded="false" aria-controls="list-options"> list options<span class="icon-arrow_right"></span></a>
-              </h2>
-            </div>
-            <div class="row p-0 m-0  p-4  bottom-border container-fluid    collapse show" id="list-options">
-
-
-              <div class="row p-0 m-0 pb-5">
-
-                  <div class="row d-flex p-0 m-0 align-items-end ">
-                    <div class="p-0 m-0   row ">
-                  
-                      <p class="m-0 p-0 mb-2 ">Gradient Interpolation Mode  </p>
-                      <div class="p-0 mb-4">
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input list-options" type="radio" name="interpolation" id="rgbInterpolation" value="rgbInterpolation"  checked>
-                          <label class="form-check-label rounded-0 mt-2 ms-2" for="rgbInterpolation">RGB</label>
+                  <div id="myForm" class="    p-0 m-0  p-4 position-relative">
+                    <div class="form-floating p-0 pb-4 col-12 ">
+                        <input type="text" id="hex_code" class="form-control converter" name="hex_code" pattern="[0-9a-fA-F]{3}([0-9a-fA-F]{3})?" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top"  title="Hex code without #" placeholder="Use #"  >
+                        <span></span>
+                        <label for="hex_code" class="  form-label col-12  ">HEX</label>
+                    </div>
+                    <div class="form-floating  p-0 pb-4 col-12 ">
+                        <input type="text" id="rgb" class="form-control converter" name="rgb" pattern="^(?:(?:^|,\s*)([01]?\d\d?|2[0-4]\d|25[0-5])){3}$" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top"  title="RGB values" placeholder="[0-255], [0-255], [0-255]"  >
+                        <span></span>
+                        <label for="rgb" class="form-label col-12 ">RGB</label>
+                    </div>
+                    <div class="form-floating  p-0 pb-4 col-12 ">
+                        <input type="text" class="form-control converter" name="hsl" id="hsl"  data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" data-icon="&#xe904;&#xe903;" title="HSl values" placeholder="[0-360], [0-100], [0-100]">
+                        <span></span>
+                        <label for="hsl" class="form-label col-12">HSL</label>
+                    </div>
+                    <div class="form-floating  p-0 pb-4 col-12 ">
+                        <input id="CSScolours" class="form-control converter" list="datalistOptions" placeholder="CSS colours" data-bs-toggle="tooltip" data-bs-html="true" data-bs-custom-class="custom-tooltip" data-bs-placement="top" title="CSS colour names">
+                        <span class="d-flex"></span>
+                        <label for="CSScolours" class="form-label col-12">CSS keywords (approximated value)</label>
+                        <datalist id="datalistOptions"></datalist>
+                    </div>
+                    <div class="input-group p-0  col-12">
+                        <div class="">
+                          <div class="col pb-3 mt-3">
+                              <input id="mypick" class="form-control converter" type="color" name="head" data-bs-toggle="tooltip" data-bs-custom-class="custom-tooltip" data-bs-placement="top" data-icon="&#xe90a;" title="Colour Picker">
+                          </div>
+                          <div class="col  pt-3">
+                              <input type="submit" id="submit" class="my_submit p-1 ps-4 pe-4 w-100" value="Add Colour" disabled>
+                          </div>
                         </div>
-                        <div class="form-check form-check-inline">
-                          <input class="form-check-input list-options" type="radio" name="interpolation" id="hslInterpolation" value="hslInterpolation"   >
-                          <label class="form-check-label mt-2 ms-2" for="hslInterpolation">HSL</label>
+                    </div>
+                  </div>
+                </div>
+            </section>
+
+            <!-- spot colours  -->
+            <section class="row   col-12 col-md-7  mb-4   ">
+                <div class="  mybox rounded-2 container p-4 pt-0">
+                  <div class="row">
+                    <div class="col-12 p-4 pb-0">
+                      <h2 class="m-0 p-0  ">Spot Colours</h2>
+                    </div>
+                    <div class="col-12 p-4 pb-0">
+                      <div class="row">
+                        <div id="spotcols" class="  col-8 p-4"></div>
+                        <div class="col-4 pt-4">
+                              <div id="gradpreview" class="opacity-0"></div>
+                        </div>
+                      </div>
+                  </div>
+                  </div>
+                </div>
+            </section>
+
+            <!-- list options  -->
+            <section class="row  col-12 col-md-5  me-md-3 mb-4 ">
+              <div class="mybox rounded-2">
+                <div class="row p-0 m-0 p-4 pb-1">
+                  <h2 class="m-0 p-0" data-icon="&#xe907;">
+                      <a class="collapse-title"  data-bs-toggle="collapse" href="#list-options" data-bs-target="#list-options" aria-expanded="false" aria-controls="list-options"> list options <span class="icon-arrow_right"></span>
+                      </a>
+                  </h2>
+                </div>
+                <div class="row p-0 m-0  p-4    container-fluid    collapse show" id="list-options">
+                  <div class="row p-0 m-0 pb-5">
+                      <div class="row d-flex p-0 m-0 align-items-end ">
+                        <div class="p-0 m-0   row ">
+                            <p class="m-0 p-0 mb-2 ">Gradient Interpolation Mode </p>
+                            <div class="p-0 mb-4">
+                              <div class="form-check form-check-inline">
+                                  <input class="form-check-input list-options" type="radio" name="interpolation" id="rgbInterpolation" value="rgbInterpolation" checked>
+                                  <label class="form-check-label rounded-0 mt-2 ms-2" for="rgbInterpolation">RGB</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                  <input class="form-check-input list-options" type="radio" name="interpolation" id="hslInterpolation" value="hslInterpolation">
+                                  <label class="form-check-label mt-2 ms-2" for="hslInterpolation">HSL</label>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="form-floating p-0 m-0 col ">
+                            <input id="intSteps" type="text" aria-label="After list" class="form-control list-options" oninput="this.value=this.value.replace(/[^0-9]/g,'');"  value="2">
+                            <label for="hex_code" class="  form-label col-12  ">Gradient Steps (integer)</label>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="row p-0 m-0 pb-5 d-flex">
+                      <div class="form-floating   m-0 p-0  col ">
+                        <input id="beforeList" type="text" aria-label="Before list" class="form-control list-options" value="const col = {">
+                        <label for="beforeList" class="form-label col-12">Before List</label>
+                      </div>
+                      <div class="form-floating   m-0 p-0   col">
+                        <input id="afterList" type="text" aria-label="After list" class="form-control list-options" value="}">
+                        <label for="afterList" class="  form-label col-12">After List</label>
+                      </div>
+                  </div>
+                  <div class="p-0  " id="myGroup">
+                      <p class="m-0 p-0 mb-2 ">List Colour format</p>
+                      <div class="form-check form-check-inline  ">
+                        
+                        <input class="form-check-input list-options" type="radio" name="inlineRadioOptions" id="hexformat-input" value="hexformat" checked>
+                        <label class="form-check-label mt-2 ms-2" for="hexformat-input" >HEX</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input list-options" type="radio" name="inlineRadioOptions" id="rgbformat-input" value="rgbformat">
+                        <label class="form-check-label rounded-0 mt-2 ms-2" for="rgbformat-input">RGB</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input list-options" type="radio" name="inlineRadioOptions" id="hslformat-input" value="hslformat">
+                        <label class="form-check-label mt-2 ms-2" for="hslformat-input">HSL</label>
+                      </div>
+                      <div class="pt-4">
+                        <div class="row p-0 m-0 pb-5 d-flex" id="hexformat">
+                            <div class="form-floating   m-0 p-0  col">
+                              <input id="beforeHEX" type="text" aria-label="Before hexhex value" class="form-control list-options" value="#">
+                              <label for="beforeHEX" class="form-label col-12">Before Colour</label>
+                            </div>
+                            <div class="form-floating   m-0 p-0  col">
+                              <input id="afterHEX" type="text" aria-label="After HEX value" value=",  " class="form-control list-options">
+                              <label for="afterHEX" class="form-label col-12">After Colour</label>
+                            </div>
+                        </div>
+                        <div class=" d-none " id="rgbformat">
+                            <div class="input-group m-0 p-0 mb-4">
+                              <div class="form-floating m-0 p-0 col">
+                                  <input id="beforeRed" type="text" aria-label="Before Red Value" class="form-control list-options" value="rgb(">
+                                  <label for="beforeRed" class="form-label col-12">Before Red</label>
+                              </div>
+                              <div class="form-floating m-0 p-0 col">
+                                  <input id="afterRed" type="text" aria-label="After Red Value" class="form-control list-options" value=", ">
+                                  <label for="afterRed" class="form-label col-12">After Red</label>
+                              </div>
+                            </div>
+                            <div class="input-group m-0 p-0 mb-4">
+                              <div class="form-floating m-0 p-0 col">
+                                  <input id="beforeGreen" type="text" aria-label="Before Green Value" class="form-control list-options">
+                                  <label for="beforeGreen" class="form-label col-12">Before Green</label>
+                              </div>
+                              <div class="form-floating m-0 p-0 col">
+                                  <input id="afterGreen" type="text" aria-label="After Green Value" class="form-control list-options" value=",">
+                                  <label for="afterGreen" class="form-label col-12">After Green</label>
+                              </div>
+                            </div>
+                            <div class="input-group m-0 p-0 mb-4">
+                              <div class="form-floating m-0 p-0 col">
+                                  <input id="beforeBlue" type="text" aria-label="Before Blue Value" class="form-control list-options">
+                                  <label for="beforeBlue" class="form-label col-12">Before Blue</label>
+                              </div>
+                              <div class="form-floating m-0 p-0 col">
+                                  <input id="afterBlue" type="text" aria-label="After Blue Value" class="form-control list-options" value="), ">
+                                  <label for="afterBlue" class="form-label col-12">After Blue</label>
+                              </div>
+                            </div>
+                        </div>
+                        <div class=" d-none " id="hslformat">
+                            <div class="input-group m-0 p-0 mb-4">
+                              <div class="form-floating m-0 p-0 col">
+                                  <input id="beforeH" type="text" aria-label="Before Hue Value" class="form-control list-options" value="hsl(">
+                                  <label for="beforeH" class="form-label col-12">Before Hue</label>
+                              </div>
+                              <div class="form-floating m-0 p-0 col">
+                                  <input id="afterH" type="text" aria-label="After Hue Value" class="form-control list-options" value="deg, ">
+                                  <label for="afterH" class="form-label col-12">After Hue</label>
+                              </div>
+                            </div>
+                            <div class="input-group m-0 p-0 mb-4">
+                              <div class="form-floating m-0 p-0 col">
+                                  <input id="beforeS" type="text" aria-label="Before Saturation Value" class="form-control list-options" value=" ">
+                                  <label for="beforeS" class="form-label col-12">Before Saturation</label>
+                              </div>
+                              <div class="form-floating m-0 p-0 col">
+                                  <input id="afterS" type="text" aria-label="After Saturation Value" class="form-control list-options" value="%, ">
+                                  <label for="afterS" class="form-label col-12">After Saturation</label>
+                              </div>
+                            </div>
+                            <div class="input-group m-0 p-0 mb-4">
+                              <div class="form-floating m-0 p-0 col">
+                                  <input id="beforeL" type="text" aria-label="Before Luminance Value" class="form-control list-options">
+                                  <label for="beforeL" class="form-label col-12">Before Luminance</label>
+                              </div>
+                              <div class="form-floating m-0 p-0 col">
+                                  <input id="afterL" type="text" aria-label="After Luminance Value" class="form-control list-options" value="%), ">
+                                  <label for="afterL" class="form-label col-12">After Luminance</label>
+                              </div>
+                            </div>
                         </div>
                       </div>
                     </div>
-                    <div class=" p-0 m-0 col ">
-                      <p class="m-0 p-0 mb-2 ">Gradient Interpolation Steps  </p>
-                      <!-- <span class="input-group-text rounded-0">Steps</span> -->
-                      <input id="intSteps" type="number" aria-label="After list" class="form-control list-options" value="2" step="1" pattern="\d+">
-                    </div>
-                  </div>
-              </div>
-
-              <div class="row p-0 m-0 pb-5">
-                <p class="p-0 m-0 mb-2">After and before the list</p>
-                  <div class="input-group m-0 p-0  ">
-                    <span class="input-group-text rounded-0">Before </span>
-                    <input id="beforeList" type="text" aria-label="Before list" class="form-control list-options" value="const col = {">
-                    <span class="input-group-text">After</span>
-                    <input id="afterList" type="text" aria-label="After list" class="form-control list-options" value="}">
-                  </div>
-              </div>
-
-              <div class="p-0  " id="myGroup">
-                     <p class="m-0 p-0 mb-2 ">List Colour format</p>
-                     <div class="form-check form-check-inline  ">
-                        <input class="form-check-input list-options" type="radio" name="inlineRadioOptions" id="hexformat-input" value="hexformat"    checked >
-                        <label class="form-check-label mt-2 ms-2" for="hexformat">HEX</label>
-                     </div>
-                     <div class="form-check form-check-inline">
-                        <input class="form-check-input list-options" type="radio" name="inlineRadioOptions" id="rgbformat-input" value="rgbformat"  >
-                        <label class="form-check-label rounded-0 mt-2 ms-2" for="rgbformat">RGB</label>
-                     </div>
-                     <div class="form-check form-check-inline">
-                        <input class="form-check-input list-options" type="radio" name="inlineRadioOptions" id="hslformat-input" value="hslformat"   >
-                        <label class="form-check-label mt-2 ms-2" for="hslformat">HSL</label>
-                     </div>
- 
-                     <div class="pt-4">
-                        <div class="  " id="hexformat"   >
-                          <p class="mb-1">Before and after Hex</p>
-                           <div class="input-group m-0 p-0 mb-4">
-                              <span class="input-group-text rounded-0">Before </span>
-                              <input id="beforeHEX" type="text" aria-label="Before hexhex value" class="form-control list-options" value="#">
-                              <span class="input-group-text rounded-0">After</span>
-                              <input id="afterHEX" type="text" aria-label="After HEX value" value="," class="form-control list-options">
-                           </div>
-                        </div>
-                        <div class=" d-none " id="rgbformat"   >
-                           <p class="mb-1">Before and after Red</p>
-                           <div class="input-group m-0 p-0 mb-4">
-                              <span class="input-group-text rounded-0">Before </span>
-                              <input id="beforeRed" type="text" aria-label="Before Red Value" class="form-control list-options" value="rgb(">
-                              <span class="input-group-text  rounded-0">After</span>
-                              <input id="afterRed" type="text" aria-label="After Red Value" class="form-control list-options" value=", ">
-                           </div>
-                           <p class="mb-1">Before and after Green</p>
-                           <div class="input-group m-0 p-0 mb-4">
-                              <span class="input-group-text rounded-0">Before </span>
-                              <input id="beforeGreen" type="text" aria-label="Before Green Value" class="form-control list-options">
-                              <span class="input-group-text rounded-0">After</span>
-                              <input id="afterGreen" type="text" aria-label="After Green Value" class="form-control list-options" value=",">
-                           </div>
-                           <p class="mb-1">Before and after Blue</p>
-                           <div class="input-group m-0 p-0 mb-4">
-                              <span class="input-group-text rounded-0">Before </span>
-                              <input id="beforeBlue" type="text" aria-label="Before Blue Value" class="form-control list-options">
-                              <span class="input-group-text rounded-0">After</span>
-                              <input id="afterBlue" type="text" aria-label="After Blue Value" class="form-control list-options" value="), ">
-                           </div>
-                        </div>
-                        <div class=" d-none " id="hslformat">
-                           <p class="mb-1">Before and after Hue</p>
-                           <div class="input-group m-0 p-0 mb-4">
-                              <span class="input-group-text rounded-0">Before </span>
-                              <input id="beforeH" type="text" aria-label="Before Hue Value" class="form-control list-options" value="hsl(">
-                              <span class="input-group-text rounded-0">After</span>
-                              <input id="afterH" type="text" aria-label="After Hue Value" class="form-control list-options" value="deg, ">
-                           </div>
-                           <p class="mb-1">Before and after Saturation</p>
-                           <div class="input-group m-0 p-0 mb-4">
-                              <span class="input-group-text rounded-0">Before </span>
-                              <input id="beforeS" type="text" aria-label="Before Saturation Value" class="form-control list-options" value=" ">
-                              <span class="input-group-text rounded-0">After</span>
-                              <input id="afterS" type="text" aria-label="After Saturation Value" class="form-control list-options" value="%, ">
-                           </div>
-                           <p class="mb-1">Before and after Luminance</p>
-                           <div class="input-group m-0 p-0 mb-4">
-                              <span class="input-group-text rounded-0">Before </span>
-                              <input id="beforeL" type="text" aria-label="Before Luminance Value" class="form-control list-options"  >
-                              <span class="input-group-text rounded-0">After</span>
-                              <input id="afterL" type="text" aria-label="After Luminance Value" class="form-control list-options" value="%), ">
-                           </div>
-                        </div>
-                     </div>
-              </div>
-
-            </div>
-         </section>
-
-         <!-- preview  -->
-         <section class="row   col-md-6  bottom-border">
-          <div class="p-4 pb-0">
-            <h2 class="p-0 m-0">Your List:</h2>
-          </div>
-           
-            <div class="p-4 ">
-              <div id="my-list" class="p-4">
-                <p class="p-0 m-0">const list = {
-                  hey, hey ,hey, hey
-                }
-                </p>
-              </div>
-              <div class="col-3  pt-4">
-                <input type="submit" id="copy" class="my_submit p-1 ps-4 pe-4 w-100" value="Copy"  >
-             </div>
-              <div id="swatches-preview" class="pt-4">
-                <div class="swatch swatch1">
                 </div>
               </div>
-            </div>
-         </section>
+            </section>
 
-         <!-- footer  -->
-         <footer class="p-4">
-          <div class="d-flex justify-content-center ">
-            <p class="p-0 m-0">© <span id="currentYear"></span>, Antonio de Gou. All Right Reserved</p>
-         </div>
-         </footer>
-      </div>
+            <!-- preview  -->
+            <section class="row col-12 col-md-7  mb-4  ">
+              <div class="mybox rounded-2 container">
+                <div class="p-4 pb-0  col-12">
+                  <h2 class="p-0 m-0">Your List:</h2>
+                </div>
+                <div class="p-4   align-self-start position-relative col-12 align-self-start justify-left-start ">
+                  <div id="my-list" class="p-4 font-monospace">
+                      
+                  </div>
+                  <div class="col-3  pt-4">
+                      <input type="submit" id="copy" class="my_submit p-1 ps-4 pe-4 w-100" value="Copy">
+                  </div>
+                  <div id="swatches-preview" class="pt-4">
+                      
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- footer  -->
+            <footer class="row col-12 p-4">
+                <div class="d-flex justify-content-center ">
+                  <p class="p-0 m-0">© <span id="currentYear"></span>, Antonio de Gou. All Right Reserved </p>
+                </div>
+            </footer>
+
+          <!-- </div> -->
+        </div>
       <script type="module" src="/main.js"></script>
    </body>
 </html>

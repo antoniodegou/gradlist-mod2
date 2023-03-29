@@ -3,11 +3,13 @@ DEFINE COLOURS FOR COLOUR MODES
 -------*/
 
 @mixin dark-mode {
-    background-color: $black-1;
+    background-color: $black-2;
     color: $white-2;
     border-color: $white-1!important;
     transition: all $transition-time;
- 
+    .mybox{
+      background-color:$black-1;
+    }
     .collapse-title{
       color:$white-1;
     }
@@ -36,7 +38,7 @@ DEFINE COLOURS FOR COLOUR MODES
         border: $border-width  solid $white-2;
       }
 
-      #gradpreview{
+      #gradpreview, .colour-demo{
         border: solid $border-width $white-1!important;
       }
     
@@ -72,12 +74,16 @@ DEFINE COLOURS FOR COLOUR MODES
   }
   
   @mixin light-mode {
-    background-color: $white-1;
+    background-color: $white-2;
     color: $black-2;
     $invalid:red;
     $valid: green;
-    // $accent:
     transition: all $transition-time!important;
+
+    .mybox{
+      background-color:$white-1;
+    }
+
     .collapse-title{
       color:$black-1;
     }
@@ -98,9 +104,14 @@ DEFINE COLOURS FOR COLOUR MODES
         border-bottom: solid $border-width $black-1!important;
     }
 
-    .my_switch_label,#gradpreview{
-        border: solid $border-width $black-1!important;
+    .my_switch_label,#gradpreview,.colour-demo, .remove{
+        border: solid $border-width $black-1!important ;
         transition: all $transition-time!important;
+    }
+
+    .colour-demo{
+      border: solid $border-width $black-1!important ;
+      border-left:unset!important;
     }
 
     .my_switch_label:after{
@@ -135,6 +146,20 @@ DEFINE COLOURS FOR COLOUR MODES
     .invalid + *:before{
       color: $invalid;
     }
+
+    #my-list{
+      background-color: $white-2;
+    }
+
+    .input-group-text{
+      border: solid $border-width $black-1;
+      background-color: $black-4;
+      color: $white-1;
+      border-right: unset;
+
+    }
+
+
 
   }
 

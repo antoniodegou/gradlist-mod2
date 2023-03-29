@@ -78,22 +78,25 @@ getSelectedValue.forEach(function(elem){
   })
 })
  
+/*
+/ Get current year for footer
+*/
+document.getElementById("currentYear").innerHTML = new Date().getFullYear()
+
+/*
+/ copy preview colours to clipboard
+*/
+const copyButton = document.getElementById('copy')
+
+copyButton.addEventListener('click', e => {
+    e.preventDefault()
+    // ref https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
+    var copyText = document.getElementById("my-list") 
+    navigator.clipboard.writeText(copyText.innerText)
+})
 
 
 export {
-    tooltipList,addDarkMode,addLightMode,toggleTheme ,checkPreference,btn
+    tooltipList,addDarkMode,addLightMode,toggleTheme ,checkPreference,btn,copyButton
 }
 
-
-
-
-
-// var collapseElementList = [].slice.call(document.querySelectorAll('.collapse'))
-// var collapseList = collapseElementList.map(function (collapseEl) {
-//   return new bootstrap.Collapse(collapseEl)
-// })
-
-// var myCollapse = document.getElementById('hay')
-// var bsCollapse = new bootstrap.Collapse(myCollapse, {
-//   toggle: false
-// })

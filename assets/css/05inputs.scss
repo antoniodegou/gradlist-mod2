@@ -62,38 +62,18 @@ tooltips
         position: absolute;
         left:0;
         top: 0;
-        // z-index: 1000!important;
     }
 
     #mypick::-moz-color-swatch::before{
       position: absolute;
       left:0;
       top: 0;
-      // z-index: 1000!important;
     }
 
     
     #mypick::-webkit-color-swatch-wrapper {
         padding: 0;
     }
-
-  //   #mypick::after{
-  //     position: absolute;
-  //     content: "\e90a";
-  //     font-family: 'icomoon';
-  //     width: 42px;
-  //     height: 42px;
-  //     border-radius: 50%;
-  //     text-align: center;
-  //     margin:  auto 0;
-  //     top: 0; 
-  //     bottom: 0; 
-  //     right: -3px;        
-  //     box-shadow: unset;
-  //     padding-top: 7px;
-  //     // transition: all 1s;
-
-  // }
 
     #mypick::before{
         position: absolute!important;
@@ -108,9 +88,7 @@ tooltips
         bottom: 0!important;
         right: -3px!important;    
         box-shadow: unset!important;
-        padding-top: 5px!important;
-        // transition: all 1s;
-
+        padding-top: 7px!important;
     }
 
   /*
@@ -122,10 +100,6 @@ add button
     text-transform: uppercase;
 }
     
-
-      
-
-
 
 /*
 input number
@@ -141,7 +115,6 @@ input number
 invalid fields
 */
     .invalid + *:before{
-        // color:	$invalid;
         position: absolute;
         content: "\e903";
         font-family: 'icomoon';
@@ -153,16 +126,13 @@ invalid fields
         top: 0px; 
          bottom: 22px; 
          right: 10px;
-
         z-index: 1000!important;
         transform: rotate(270deg);
         transition: all $transition-time;
-      
         padding-top: 3px;
       } 
 
     .valid + *:before{
-        // color:		$valid;
         position: absolute;
         content: "\e904";
         font-family: 'icomoon';
@@ -179,6 +149,7 @@ invalid fields
         transition: all $transition-time;
         padding-top: 3px;
     }
+
 /*
 submit
 */
@@ -198,9 +169,3 @@ submit
   right: auto;
 }
 
-pre{
-  // line-height: .9;
-  white-space: pre-wrap;
-  overflow:hidden;
-
-}

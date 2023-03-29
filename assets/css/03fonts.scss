@@ -91,7 +91,7 @@
   }
 
 
-  p,.custom-tooltip.tooltip, pre{
+  p, .custom-tooltip.tooltip, pre{
     font-family: 'Sentient-Variable';
     font-weight: 400;
   }
@@ -100,8 +100,9 @@
     font-weight: 700;
   }
 
-  // section{
-  //   background: conic-gradient(at 50% 50%,transparent 135deg,green 0,green 225deg, transparent 0);
 
-  // }
-
+  pre{
+    white-space: pre-wrap!important;
+    overflow:hidden;
+    letter-spacing: 1px;
+  }

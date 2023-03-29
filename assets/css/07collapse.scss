@@ -21,13 +21,20 @@
 input[type="radio"]{
     border-radius: 50%!important;
     height:32px; 
-width:32px;
+    width:32px;
 }
 
 .form-check-label{
     height: 32px!important;
+   
 }
 .form-check-input:checked {
     background-color: $accent;
-    // border-color: #0d6efd;
 }
+.form-check-input:checked[type=radio]{
+    background-image: unset;
+    background: $accent;
+}
+#beforeList, #beforeHEX{
+    border-right: unset!important;
+  }

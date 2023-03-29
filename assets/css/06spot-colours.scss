@@ -3,17 +3,11 @@ spot colours
 -------*/
 
 .spot-col{
-    height:38px!important;
-    // border: $border-width solid $white-1;
-    // z-index: 1000!important;
-  }
-  
- 
+    height:  calc(3.5rem + 2px) !important;
+}
   
  .colour-demo{
-    border: $border-width solid $white-1;
-    border-left:unset;
-    // border-right:unset;
+    border-left:unset!important;
   }
   
   .remove, .draggin{
@@ -29,15 +23,10 @@ spot colours
     cursor:pointer;
   }
 
-  .shade{
-    z-index: -1;
-  }
+ 
   
   #gradpreview{
     background: inherit;
-    // height: calc(3.5rem + 2px)!important;
-    // animation: fadeMe 2s;
-    // transition: all $transition-time!important;
   }
   
   @keyframes fadeMe {
