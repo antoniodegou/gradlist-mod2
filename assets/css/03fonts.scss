@@ -91,7 +91,7 @@
   }
 
 
-  p, .custom-tooltip.tooltip, pre{
+  p, .custom-tooltip.tooltip, pre,legend{
     font-family: 'Sentient-Variable';
     font-weight: 400;
   }
@@ -105,4 +105,8 @@
     white-space: pre-wrap!important;
     overflow:hidden;
     letter-spacing: 1px;
+  }
+
+  legend{
+    font-size: 1rem;
   }
