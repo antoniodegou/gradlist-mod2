@@ -36,8 +36,6 @@ Visit the deployed site: [GradList](https://antoniodegou.github.io/gradlist-mod2
 
 
 * [Testing](#testing)
-  * [Automated testing](#Automated-testing)
-  * [Manual testing](#Manual-testing)
 
 * [Credits](#credits)
 
@@ -86,7 +84,7 @@ The primary audience is generative artists or people who must work with colour l
 Because this app works with colours, the design must be functional. The Aesthetics can't overpower the function or, more specifically, the view of the colours.
 The Shapes are simple and intuitive so that it informs the performance.
 
-I implemented the dark and light mode, where with the switch the user can test their colours agaisnt a light or dark background. All styles change with it in a very pleasing off white and off black.
+I implemented the dark and light mode, where users can test their colours against a light or dark background with the switch. All styles change with it in a very pleasing off-white and off-black.
 
 
 
@@ -344,3 +342,43 @@ The deployment settings are in the "vite.config.js" file at the project's root.
 ## Testing & Bugs
 See TESTING.md for the full breakdown of testing & bugs
 [here](TESTING.md)
+
+## Credits
+
+1. Styling the input type "Color" is challenging, and I had to use this resource:
+	* https://www.youtube.com/watch?v=9Ds6dzhda0c
+
+2. Validation of input for hex and RGB format with the help of regular expressions
+	* https://stackoverflow.com/questions/70213968/how-input-accepts-only-hex-numbers
+	* https://stackoverflow.com/questions/20319781/regular-expression-to-validate-rgb-string-value
+
+3. Understand form validation of form for javascript
+
+	* https://www.freecodecamp.org/news/form-validation-with-html5-and-javascript/
+
+4. Dark Mode
+
+	* https://javascript.plainenglish.io/how-to-create-a-dark-mode-with-sass-scss-and-vanilla-javascript-e1c7835cf474
+
+5. Style Check Box
+
+	* https://codepen.io/mburnette/pen/LxNxNg
+
+6. Add icons to input text as pseudo element
+
+	* https://stackoverflow.com/questions/2587669/can-i-use-a-before-or-after-pseudo-element-on-an-input-field
+
+7. input whole number validation
+
+	* https://stackoverflow.com/questions/8808590/number-input-type-that-takes-only-integers
+
+8. prevent enter keyboard key from having an effect
+
+	* https://stackoverflow.com/questions/28411555/disable-enter-key-press-in-type-button
+
+9. DOM manipulation
+
+	* https://www.w3schools.com/js/js_htmldom.asp
+	* https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
+
+

@@ -3,7 +3,7 @@
 * [Testing](#testing)
   * [Automated testing](#Automated-testing)
   * [Manual testing](#Manual-testing)
-
+  * [Bugs](#bugs)
 
 ## automated testing
 
@@ -14,9 +14,10 @@ I got one warning for having two values on the attribute `data-icon`. But becaus
 
 [HTML validation](https://validator.w3.org/nu/?doc=https%3A%2F%2Fantoniodegou.github.io%2Fgradlist-mod2%2F)
 
+
 The CSS error is all related to bootstrap, not my code.
 
-[CSS validation](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fantoniodegou.github.io%2Fgradlist-mod2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=pt-BR#errors)
+[CSS validation](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fantoniodegou.github.io%2Fgradlist-mod2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=pt-BR)
 
 
 
@@ -39,6 +40,17 @@ The accessibility check passed with no errors.
 Due to its nature, it will not live-reload as soon as there is any error on CSS or javascript, and it also says where it found the error.
 
 ## Manual Testing
+
+### Tools for testing
+
+1. Macbook pro m1 2021
+2. Google Chrome
+3. firefox
+4. Safari
+5. Hoverify (emulates an Extensive Mobile devices list)
+6. Google Dev Tools
+7. Huawei Mate 20
+8. iMac 2019
 
 ### Converter section
 
@@ -113,7 +125,27 @@ All inputs here are transformed into String type and are used to format the outp
 
 I ensured the field on gradient steps has a regex so it only accepts integers because the App couldn't compute the gradient with any other number type.
 
+When you try to put a value that values that is not an integer, it just won't accept it.
+
 ### Output List
 
 The copy button always copies the text to the clipboard.
+
+## Responsiveness
+
+### Hoverify and google dev tools
+
+I used Hoverify, which allows me to test several devices simultaneously in live time. 
+
+![Lighhouse](https://raw.githubusercontent.com/antoniodegou/web-portfolio-mod1/main/readme-images/hoverify.jpg)
+
+
+## Bugs
+
+* The icon on the colour picker doesn't appear on Firefox. 
+
+* On the converter section, I need to have two icons, but I get a warning that I have an attribute with two elements, but regardless it works.
+
+* I have some repeated CSS code for dark and light modes, and I wonder if there is a way of making the code cleaner.
+
 
