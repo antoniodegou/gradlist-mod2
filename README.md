@@ -86,6 +86,10 @@ The primary audience is generative artists or people who must work with colour l
 Because this app works with colours, the design must be functional. The Aesthetics can't overpower the function or, more specifically, the view of the colours.
 The Shapes are simple and intuitive so that it informs the performance.
 
+I implemented the dark and light mode, where with the switch the user can test their colours agaisnt a light or dark background. All styles change with it in a very pleasing off white and off black.
+
+
+
 
 ### Colours
 
@@ -94,7 +98,6 @@ Because of the nature of the App, the colour has to be based on black and white,
 Nowadays, black and white can feel a bit dated, jarring, and painful to the eye. So I decided to have off tones for dark mode and white mode. To have a sense of sophistication and modernity.
 
 <img src="https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/baseColours.jpg" width="60%" alt="Base Colours">
-
 
 
 Because of form validation, I decided to rely on green for valid and red for invalid; the respective tones are slightly adjusted when in dark or white mode. Therefore, I decided to rely on the traffic light system and used yellow as the accent colour for the rest of the website.
