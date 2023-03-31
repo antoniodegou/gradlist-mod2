@@ -3,7 +3,7 @@
 }
 .collapse-title[aria-expanded="true"]   .icon-arrow_right{
     position: absolute;
-    top:-4px;
+    top:-1px;
     font-size: 2rem;
     transform: rotate(450deg)!important;
     transition: all $transition-time;
@@ -11,7 +11,7 @@
 
 .collapse-title[aria-expanded="false"]  .icon-arrow_right{
     position: absolute;
-    top:-4px;
+    top:-1px;
     font-size: 2rem;
     transform: rotate(0deg)!important;
     transition: all $transition-time;
