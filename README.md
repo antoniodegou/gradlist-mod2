@@ -6,7 +6,7 @@ Visit the deployed site: [GradList](https://antoniodegou.github.io/gradlist-mod2
 
 
 
-![Antonio de gou is responsive](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/reponsiveMockUP.png)
+![Antonio de gou is responsive](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/reponsiveMockUP.jpg)
 
 ---
 
@@ -86,9 +86,6 @@ The primary audience is generative artists or people who must work with colour l
 Because this app works with colours, the design must be functional. The Aesthetics can't overpower the function or, more specifically, the view of the colours.
 The Shapes are simple and intuitive so that it informs the performance.
 
-![Antonio de gou is responsive](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/reponsiveMockUP.png)
-
-
 
 ### Colours
 
@@ -96,13 +93,17 @@ Because of the nature of the App, the colour has to be based on black and white,
 
 Nowadays, black and white can feel a bit dated, jarring, and painful to the eye. So I decided to have off tones for dark mode and white mode. To have a sense of sophistication and modernity.
 
-![Base Colours](/img01/baseColours.jpg)
+<img src="https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/baseColours.jpg" width="60%" alt="Base Colours">
+
+
 
 Because of form validation, I decided to rely on green for valid and red for invalid; the respective tones are slightly adjusted when in dark or white mode. Therefore, I decided to rely on the traffic light system and used yellow as the accent colour for the rest of the website.
 
-![Base Colours](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/othercolours.jpg)
+<img src="https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/othercolours1.jpg" width="60%" alt="valid invalid dark mode">
 
-![Base Colours2](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/othercolours2.jpg)
+<img src="https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/othercolours2.jpg" width="60%" alt="valid invalid light mode">
+
+
 
 ### Typography
 
@@ -114,21 +115,27 @@ Sentient - for code text and warnings
 
 Icomoon -  I used icomoon to produce a font with all the icons I needed.
 
-![typography](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/img01/types.jpg)
+![typography](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/types.jpg)
 
 ### Wireframes
 
 Wireframes were made with adobe XD.
 
 <details>
-<summary>See Desktop</summary> 
-![Desktop Mockup](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/mockup-laptop.jpg) </details>
+<summary>See Desktop</summary>
+
+![Desktop Mockup](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/mockup-laptop.jpg) 
+</details>
 
 <details><summary>See Tablet</summary> 
-![Tablet Mockup](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/mockup-mobile.jpg) </details>
+
+![Tablet Mockup](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/mockup-mobile.jpg) 
+</details>
 
 <details><summary>See Mobile</summary> 
-![Mobile Mockup](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/mockup-tablet.jpg) </details>
+
+![Mobile Mockup](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/mockup-tablet.jpg) 
+</details>
 
 ## Features
 
@@ -143,7 +150,7 @@ Wireframes were made with adobe XD.
 
 #### Converter:
 
- ![Converter](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/feat_converter.jpg)
+<img src="https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/feat_converter.jpg" width="60%" alt="Converter">
 
 Five input options exist for Hex, RGB, HSL, CSS colours and a colour picker.
 All fields have form validation so they can say if the format is accepted or not.
@@ -160,7 +167,7 @@ The list is updated automatically once you unfocus from the field or press enter
 
 #### Spot Colours:
 
- ![Converter](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/feat_spot.jpg)
+<img src="https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/feat_spot.jpg" width="60%" alt="Spot Colours">
 
 Spot colour shows the colours added from the "add colour" button.
 Each colour swatch is generated with a minus button to let you delete the colour.
@@ -169,7 +176,8 @@ The preview gradient is updated as you add or subtract spot colours.
 
 #### Options:
 
- ![Converter](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/feat_options.jpg)
+<img src="https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/feat_options.jpg" width="60%" alt="Options">
+
 
 The options on the list are pretty extensive without being overwhelming.
 
@@ -193,7 +201,8 @@ The list is updated automatically once you unfocus from the field or press enter
 
 #### Output:
 
- ![Converter](https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/feat_output.jpg)
+<img src="https://raw.githubusercontent.com/antoniodegou/gradlist-mod2/main/img/feat_output.jpg" width="60%" alt="Output">
+ 
 
 It shows a window with the user's final list output.
 
@@ -210,22 +219,21 @@ With the help of javascript, the year is continuously updated without the need t
 
 ### Future Implementations
 
-Have more colour formats to convert.
-Have more colour formats in the output list.
-Add an extra option of the user's output for the list to be Inline or Block.
-On the spot colours section, I would like to implement a drag option where you could alter the order of the list instead of just deleting colours.
+1. Have more colour formats to convert.
+2. Have more colour formats in the output list.
+3. Add an extra option of the user's output for the list to be Inline or Block.
+4. On the spot colours section, I would like to implement a drag option where you could alter the order of the list instead of just deleting colours.
 
 
 ### Accessibility
 
-Accessibility has been considered since the inception of this project.
-
-I used semantic HTML.
-The buttons have a hover and disabled/abled state. 
-All the links have an Aria label.
-The colours passed the contrast test on Wave.
-I analysed with Wave and got Zero errors.
-The Form has labels.
+* Accessibility has been considered since the inception of this project.
+* I used semantic HTML.
+* The buttons have a hover and disabled/abled state. 
+* All the links have an Aria label.
+* The colours passed the contrast test on Wave.
+* I analysed with Wave and got Zero errors.
+* The Form has labels.
 
 
 ---
@@ -246,7 +254,7 @@ The Form has labels.
 * ViteJS
 * Visual studio code
 * iTerm (terminal tool)
-* git
+* Git
 * GitHub
 * Google Dev Tools (To troubleshoot and test features and solve issues with responsiveness and styling)
 * Hoverify (responsiveness testing on several devices)

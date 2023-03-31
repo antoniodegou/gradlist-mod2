@@ -33,8 +33,10 @@ const colorPicker = document.getElementById('mypick');
 
 
 converterInputs.forEach(function(elem) {
- 
-    elem.addEventListener('change', function(e){
+    if(elem.id !== 'mypick'){
+
+   
+    elem.addEventListener('keyup', function(e){
       // e.preventDefault();
       let input =  e.target;
       submit.setAttribute("disabled", "");
@@ -79,11 +81,10 @@ converterInputs.forEach(function(elem) {
           input.focus({ focusVisible: true })
         }
       }
-    
       if(input.id == 'CSScolours'){
         let a =  validateColours([input])
         if(a){
-          converterColours(['hex_code', 'rgb', 'hsl', 'myPick' ])
+          converterColours([input,'hex_code', 'rgb', 'hsl', 'myPick' ])
           validateColours([hex_code, rgb, hsl])
         }else{
           hex.value = hex == input ? document.getElementById('hex_code').value : 'no'
@@ -93,11 +94,18 @@ converterInputs.forEach(function(elem) {
           input.focus({ focusVisible: true })
         }
       }
+
+  })
+  }else{
+    elem.addEventListener('change', function(e){
+      let input =  e.target;
+      submit.setAttribute("disabled", "");
       if(input.id == 'mypick'){
         converterColours([input])
         validateColours([hex_code, rgb, hsl, cssOption ])
       }
-  })
+    })
+  }
 })
 
 
@@ -124,7 +132,6 @@ const converterColours = (inputs) => {
       colorPicker.value = "#"+hex.value
       cssOption.value = convert.rgb.keyword(parseInput)
     }
-
     if(input.id == 'hsl'){
       let parseInput = input.value.replace(/\s+/g, '').split(',').map(Number)
       hsl.value = input.value.replace(/\s+/g, '')
@@ -151,31 +158,32 @@ const converterColours = (inputs) => {
 const validateColours = (validateArray) => {
   let isValid;
   validateArray.forEach((ele)=>{
-   
     if(ele.id == 'hex_code' ){
+      ele.value = ele.value.replace(/\s+/g, '')
       isValid =  ele.validity.valid
       eventFunc(isValid, ele , "Use valid Hex colour")
     }
     if(ele.id == 'rgb'){
+      ele.value = ele.value.replace(/\s+/g, '')
       isValid =  ele.validity.valid
       eventFunc(isValid, ele, "0-255, 0-255, 0-255")
     }
     if(ele.id == 'hsl'){
+      ele.value = ele.value.replace(/\s+/g, '')
       let parseInput = ele.value.split(',').map(Number)
       isValid = checkHSL(parseInput)
       eventFunc(isValid, ele, "0-360, 0-100, 0-100")
     }
     if(ele.id == 'CSScolours'){
+      ele.value = ele.value.replace(/\s+/g, '')
       isValid =  keys.includes(ele.value)
       eventFunc(isValid, ele, "not a css colour")
     }
-   
   })
   return isValid
 }
 
 const eventFunc = (isValid, input, invalidMessage) =>{
-
     if(!isValid) {
       input.reportValidity()
       submit.setAttribute("disabled", "");
@@ -185,7 +193,6 @@ const eventFunc = (isValid, input, invalidMessage) =>{
         input.setCustomValidity(invalidMessage);
         input.setAttribute("isvalid", "false")
       }
-
     }else{
       input.setCustomValidity("");
       input.classList.remove('invalid');
@@ -196,7 +203,6 @@ const eventFunc = (isValid, input, invalidMessage) =>{
       input.reportValidity()
       submit.removeAttribute('disabled')
     }
-
 }
 
 const checkHSL = (input) => { 
